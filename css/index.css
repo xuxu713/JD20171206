@@ -75,6 +75,9 @@ a {
   line-height: 28px;
   margin-top: 2px;
 }
+#shortcut .wrap .dropdown i {
+  color: #f10215;
+}
 #shortcut .nav-li {
   margin-right: 8px;
 }
@@ -84,7 +87,7 @@ a {
   line-height: 15px;
   border-left: solid 1px #ccc;
   margin: 8px 0;
-  padding: 0 10px;
+  padding: 3px 10px;
   list-style: none;
   position: relative;
   z-index: 21;
@@ -96,23 +99,50 @@ a {
 #shortcut .nav-li li i {
   position: absolute;
   right: 5px;
-  top: 2px;
+  top: 5px;
   width: 12px;
   height: 12px;
   line-height: 12px;
 }
-#shortcut .nav-li .cw-icon {
+#shortcut .cw-icon {
   padding-right: 20px !important;
-  overflow: hidden;
   position: relative;
-  z-index: 1;
   float: left;
-  border: 1px solid #e3e4e5;
+}
+#shortcut .submyjd, #shortcut .subservice {
+  position: absolute;
+  top: 21px;
+  left: -1px;
+  width: 280px;
+  z-index: 60;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: white;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+#shortcut .submyjd ul, #shortcut .subservice ul {
+  padding: 10px 0;
+}
+#shortcut .submyjd .spec, #shortcut .subservice .spec {
+  width: 90%;
+  font-weight: 700;
+  font-size: 12px;
+  color: #666;
+}
+#shortcut .submyjd li, #shortcut .subservice li {
+  border: none;
+  width: 40%;
+  margin: 2px;
+  margin-left: 5px;
+}
+#shortcut .submyjd .list-top, #shortcut .subservice .list-top {
+  border-bottom: 1px solid #ccc;
 }
 
 #header .wrap {
   position: relative;
-  z-index: 11;
+  z-index: 10;
   height: 140px;
 }
 #header .wrap .logo {
@@ -194,6 +224,7 @@ a {
   top: 25px;
 }
 #header .wrap #settleup .cw-icon {
+  padding-right: 20px !important;
   width: 188px;
   height: 33px;
   background-color: #fff;
@@ -201,7 +232,6 @@ a {
   line-height: 33px;
   overflow: hidden;
   position: relative;
-  z-index: 1;
   float: left;
   border: 1px solid #e3e4e5;
 }
@@ -270,6 +300,9 @@ a {
   font-weight: 700;
   color: #555;
 }
+#header .wrap #navitems a:hover {
+  color: #c81623;
+}
 #header .wrap #treasure {
   position: absolute;
   right: 0;
@@ -282,6 +315,83 @@ a {
   width: 190px;
   height: 40px;
   background: url("//img30.360buyimg.com/da/jfs/t12760/37/1446643649/5567/e1e76c56/5a1fc71aN74be1e33.gif") center no-repeat;
+}
+#header .fix-search {
+  position: absolute;
+  left: 320px;
+  top: 6px;
+  width: 550px;
+  height: 35px;
+}
+#header .fix-search input {
+  left: 0;
+  padding: 4px;
+  width: 490px;
+  height: 25px;
+  border: 1px solid #f10215;
+  line-height: 25px;
+  font-size: 14px;
+  border-color: #efefef;
+  background-color: #efefef;
+  position: absolute;
+  top: 0;
+  outline: none;
+}
+#header .fix-search span {
+  position: absolute;
+  right: 65px;
+  top: 10px;
+  width: 19px;
+  height: 15px;
+  overflow: hidden;
+  background: url("//misc.360buyimg.com/product/search/1.0.4/css/i/sprite-photo-search.png") no-repeat;
+  cursor: pointer;
+}
+#header .fix-search button {
+  border-radius: 0;
+  right: 0;
+  width: 50px;
+  height: 35px;
+  line-height: 35px;
+  border: none;
+  background-color: #f10215;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  outline: none;
+}
+
+#fixhead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  border-bottom: 2px solid #f10214;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  height: 0;
+  display: none;
+}
+#fixhead .wrap {
+  height: 48px;
+}
+#fixhead .fix-logo {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 125px;
+  height: 40px;
+}
+#fixhead .fix-logo a {
+  overflow: hidden;
+  display: block;
+  width: 125px;
+  height: 40px;
+  background: url("//img14.360buyimg.com/da/jfs/t7366/203/1731206510/2597/d71c891f/59a056c1N5e4d6940.png") no-repeat;
+  text-indent: -999px;
 }
 
 #fs {
@@ -318,9 +428,15 @@ a {
   line-height: 28px;
   font-size: 0;
 }
+#fs .fs-inner .fs-col1 .cate_menu_item:hover {
+  background-color: #999395;
+}
 #fs .fs-inner .fs-col1 .cate_menu_lk {
   font-size: 14px;
   color: #fff;
+}
+#fs .fs-inner .fs-col1 .cate_menu_lk:hover {
+  color: #c81623;
 }
 #fs .fs-inner .fs-col1 .cate_menu_line {
   padding: 0 4px;
@@ -641,11 +757,7 @@ a {
   width: 15px;
   height: 16px;
 }
-#seckill .sk_cd {
-  float: left;
-}
 #seckill .sk_cd_tip {
-  float: left;
   line-height: 45px;
   padding-top: 10px;
   font-size: 14px;

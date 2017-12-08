@@ -7,6 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,京东" />
 		<meta name="description" content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!" />
+		<link rel="icon" href="//www.jd.com/favicon.ico">
 		<link type="text/css" href="css/normalize.css" rel="stylesheet" />
 		<link type="text/css" href="css/public.css" rel="stylesheet" />
 		<link type="text/css" href="css/index.css" rel="stylesheet" />
@@ -36,9 +37,27 @@
 						<li>
 							<a target="_blank" href="//order.jd.com/center/list.action">我的订单</a>
 						</li>
-						<li class="cw-icon">
-							<a target="_blank" href="//home.jd.com/">我的京东</a>
-							<i class="iconfont"></i>
+						<li class="cw-icon myjdli">
+							<div>
+								<a target="_blank" href="//home.jd.com/" class="myjd">我的京东</a>
+								<i class="iconfont"></i>
+							</div>
+							<div class="submyjd">
+								<ul class="list-top clear">
+									<li><a href="#">待处理订单</a></li>
+									<li><a href="#">消息</a></li>
+									<li><a href="#">返修退换货</a></li>
+									<li><a href="#">我的问答</a></li>
+									<li><a href="#">降价商品</a></li>
+									<li><a href="#">我的关注</a></li>
+								</ul>
+								<ul class="list-bottom clear">
+									<li><a href="#">我的京东</a></li>
+									<li><a href="#">我的优惠券</a></li>
+									<li><a href="#">我的白条</a></li>
+									<li><a href="#">我的理财</a></li>
+								</ul>
+						    </div>
 						</li>
 						<li>
 							<a target="_blank" href="//vip.jd.com/">京东会员</a>
@@ -46,9 +65,29 @@
 						<li>
 							<a target="_blank" href="//b.jd.com/">企业采购</a>
 						</li>
-						<li class="cw-icon">
-							<div>客户服务</div>
-							<i class="iconfont"></i>
+						<li class="cw-icon serviceli">
+							<div>
+								<a target="_blank" href="//home.jd.com/" class="myser">客户服务</a>
+								<i class="iconfont"></i>
+							</div>
+							<div class="subservice">
+								<ul class="list-top clear">
+									<li class="spec">客户</li>
+									<li><a href="#">待处理订单</a></li>
+									<li><a href="#">消息</a></li>
+									<li><a href="#">返修退换货</a></li>
+									<li><a href="#">我的问答</a></li>
+									<li><a href="#">降价商品</a></li>
+									<li><a href="#">我的关注</a></li>
+								</ul>
+								<ul class="list-bottom clear">
+									<li class="spec">商户</li>
+									<li><a href="#">我的京东</a></li>
+									<li><a href="#">我的优惠券</a></li>
+									<li><a href="#">我的白条</a></li>
+									<li><a href="#">我的理财</a></li>
+								</ul>
+						    </div>
 						</li>
 						<li class="cw-icon">
 							<div>网站导航</div>
@@ -130,6 +169,20 @@
 						</div>
 						<div id="treasure">
 							<a id="J_promo_lk" class="promo_lk" href="//c-nfa.jd.com/adclick?keyStr=6PQwtwh0f06syGHwQVvRO7pzzm8GVdWoLPSzhvezmOWokbN2gOukAyBrOgN1bOH22fLbtBJAPcOYIbgh996ZuXXka4AGc5RrVyX/2EeX1QUu+E2CKJ8lpa9StB2nKk6Q4fLWlvRBkxoM4QrINBB7LeZ4yX2KmbTpdyB5OH+nFpn2jUboGVxTgV1NYOry9TuoOZclZQy8tD8SmJfRl65s2HRNPXO1OlOnpjSdsgyn3tv6IKGIVG5f8/1M7NcIo0ve8lA8M70Lq8BMrlEVc8b+NjlXCtVJy736rNTlDFJujSIZ0bHb+XoB0DH51Ye094LFe10Ui55Dmr3ucUl7esusJg==&amp;cv=2.0&amp;url=//sale.jd.com/act/YHjNFoByeLwQv.html" target="_blank" fclog="15629.112313.435898.1.571_1816_8703"></a>
+						</div>
+					</div>
+				</div>
+				<div id="fixhead">
+					<div class="wrap">
+						<div class="fix-logo">
+							<a href="//www.jd.com" class="search_logo_lk">京东，多快好省</a>
+						</div>
+						<div class="fix-search">
+							<form>
+								<input type="text" class="text">
+								<span class="upload-bg"></span>
+								<button><i class="iconfont"></i></button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -393,7 +446,7 @@
 							<a href="//miaosha.jd.com" target="_blank" class="box_subtit">总有你想不到的低价<i class="box_subtit_arrow"></i></a>
 						</div>
 						<div class="box_hd_col2 fr clear">
-							<div class="sk_cd clear">
+							<div class="sk_cd fl clear">
 								<div class="sk_cd_tip fl">当前场次</div>
 								<div class="sk_cd_main">
 									<div class="cd clear">
@@ -404,7 +457,7 @@
 										<div class="cd_item cd_second"><span class="cd_item_txt"></span></div>
 									</div>
 								</div>
-								<div class="sk_cd_tip">后结束抢购</div>
+								<div class="sk_cd_tip fl">后结束抢购</div>
 							</div>
 						</div>
 					</div>
