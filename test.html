@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.3.js"></script>
+		<style>
+			a {
+				display: block;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<a class="1" href="" title="">111<img src="" alt=""></a>
+			<a class="2" href="" title="">222<img src="" alt=""></a>
+			<a class="3" href="" title="">333<img src="" alt=""></a>
+		</div>
+		<!--<script>
+			$.when(
+				$.ajax("php/index.php")).done(function(data) {
+				var arr = JSON.parse(data);
+				var $a = $('a');
+				for(var i = 0; i < $a.length; i++) {
+					for(var j in arr[i]) {
+						console.log(arr[i][j]);
+						$a.attr('href', arr[i]['href'])
+					}
+				}
+			});
+		</script>-->
+		<script>
+			$.when(
+				$.ajax('php/test.php')).done(function(data) {
+				var arr = JSON.parse(data);
+				console.log(arr);
+			});
+		</script>
+
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+
+</html>

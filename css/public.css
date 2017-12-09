@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+body,html{
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	color: #666;
+}
+a {
+	color: #666;
+	text-decoration: none;
+}
+
+.clear:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+
+/*@font-face {
+	font-family: iconfont;
+	src: url('../font/iconfont.eot') format('embedded-opentype'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg') format('svg')
+}*/
+

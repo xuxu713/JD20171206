@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--第一：做二级菜单，如果没有i（下箭头icon），则是与a同级建立div，相对于li定位。因为兄弟li有不需要二级导航（不需要i）。反正都是相对于li定位，所以把需要二级菜单的li的a和i一起包起来-->
+		<ul>
+			<li class="cw-icon serviceli">
+				<a target="_blank" href="//home.jd.com/" class="myser">客户服务</a>
+				<i class="iconfont"></i>
+			</li>
+			<li class="cw-icon serviceli">
+				<div>
+					<a target="_blank" href="//home.jd.com/" class="myser">客户服务</a>
+					<i class="iconfont"></i>
+				</div>
+				<div class="sub"></div>
+			</li>
+		</ul>
+		<!--第二：做顶部悬浮搜索框，滚轮距离大于800出现，实现效果从上往下出现，利用animate和高度变化实现。第一次效果ok，滚轮距离小于限制条件后搜索框消失，再大于限制条件后搜索框出现，快速重复几次后，搜素框会瞬间出现，不再有自上而下出现的效果。用stop控制animate未成功，后解决方案为animate的运动时间设置为200，能迅速完成效果。如果时间设置为1000则依然有bug-->
+		<script>
+			$(window).scroll(function() {
+				var $scrolltop = $(document).scrollTop();
+				var $fixhead = $('#fixhead');
+				if($scrolltop >= 300) {
+					$fixhead.show();
+					$fixhead.stop().animate({
+						height: '48px'
+					}, 200);
+				} else {
+					$fixhead.height('0');
+					$fixhead.hide();
+
+				}
+			});
+		</script>
+		<!--第三：重复的效果实现，通过传参的不同，控制不同对象的实现效果，比如鼠标划过a变色，二级菜单的出现消失，轮播图、tab切换的实现-->
+	</body>
+
+</html>
