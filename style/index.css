@@ -17,7 +17,8 @@
 
 a {
   color: #999;
-  text-decoration: none; }
+  text-decoration: none;
+  font-size: 12px; }
 
 .wrap {
   margin: 0 auto;
@@ -57,11 +58,34 @@ a {
     height: 30px;
     line-height: 30px;
     color: #999; }
-    #shortcut .wrap .dropdown {
+    #shortcut .wrap .dropparent {
+      position: relative;
       margin-left: 200px;
       height: 28px;
       line-height: 28px;
       margin-top: 2px; }
+    #shortcut .wrap .subdrop {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      width: 300px;
+      z-index: 60;
+      border: 1px solid #ccc;
+      border-top: none;
+      background-color: white;
+      box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+      display: none;
+      padding-top: 10px; }
+      #shortcut .wrap .subdrop li {
+        float: left;
+        border: none;
+        width: 20%;
+        text-align: center; }
+    #shortcut .wrap .dropdown {
+      padding-left: 7px;
+      padding-right: 7px;
+      border: 1px solid #e3e4e5;
+      border-bottom: none; }
       #shortcut .wrap .dropdown i {
         color: #f10215; }
   #shortcut .nav-li {
@@ -140,6 +164,45 @@ a {
       #shortcut .spesubweb ul .spec {
         margin: 5px 0; }
 
+#header .button {
+  border-radius: 0;
+  right: 0;
+  width: 50px;
+  height: 35px;
+  line-height: 35px;
+  border: none;
+  background-color: #f10215;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  outline: none; }
+#header .photo {
+  position: absolute;
+  right: 65px;
+  top: 10px;
+  width: 19px;
+  height: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  background: url("../img/sprite-photo-search.png") no-repeat;
+  cursor: pointer; }
+#header .photo:hover {
+  background-position: -30px 0; }
+#header .text {
+  left: 0;
+  padding: 4px;
+  width: 490px;
+  height: 25px;
+  border: 1px solid #f10215;
+  line-height: 25px;
+  font-size: 14px;
+  color: #989898;
+  position: absolute;
+  top: 0;
+  outline: none;
+  color: #666; }
 #header .wrap {
   position: relative;
   z-index: 10;
@@ -167,48 +230,24 @@ a {
       background-repeat: no-repeat;
       text-indent: -999px; }
   #header .wrap .search .form {
-    position: absolute;
+    position: relative;
     left: 320px;
     top: 25px;
     width: 550px;
     height: 35px; }
-    #header .wrap .search .form .text {
-      left: 0;
-      padding: 4px;
-      width: 490px;
-      height: 25px;
-      border: 1px solid #f10215;
-      line-height: 25px;
-      font-size: 14px;
-      color: #989898;
-      position: absolute;
-      top: 0;
-      outline: none; }
-    #header .wrap .search .form .photo {
-      position: absolute;
-      right: 65px;
-      top: 10px;
-      width: 19px;
-      height: 15px;
-      overflow: hidden;
-      cursor: pointer;
-      background: url("../img/sprite-photo-search.png") no-repeat; }
-    #header .wrap .search .form .photo:hover {
-      background-position: -30px 0; }
-    #header .wrap .search .form .button {
-      border-radius: 0;
-      right: 0;
-      width: 50px;
-      height: 35px;
-      line-height: 35px;
-      border: none;
-      background-color: #f10215;
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      position: absolute;
-      top: 0;
-      outline: none; }
+  #header .wrap .search .text-ul {
+    width: 497px;
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    left: 0;
+    top: 33px;
+    background-color: white;
+    color: #666666;
+    z-index: 95;
+    font-size: 12px; }
+    #header .wrap .search .text-ul li {
+      padding: 6px;
+      cursor: pointer; }
   #header .wrap #settleup {
     position: absolute;
     right: 99px;
@@ -293,47 +332,14 @@ a {
       height: 40px;
       background: url("//img30.360buyimg.com/da/jfs/t12760/37/1446643649/5567/e1e76c56/5a1fc71aN74be1e33.gif") center no-repeat; }
 #header .fix-search {
-  position: absolute;
+  position: relative;
   left: 320px;
   top: 6px;
   width: 550px;
   height: 35px; }
   #header .fix-search input {
-    left: 0;
-    padding: 4px;
-    width: 490px;
-    height: 25px;
-    border: 1px solid #f10215;
-    line-height: 25px;
-    font-size: 14px;
     border-color: #efefef;
-    background-color: #efefef;
-    position: absolute;
-    top: 0;
-    outline: none; }
-  #header .fix-search span {
-    position: absolute;
-    right: 65px;
-    top: 10px;
-    width: 19px;
-    height: 15px;
-    overflow: hidden;
-    background: url("//misc.360buyimg.com/product/search/1.0.4/css/i/sprite-photo-search.png") no-repeat;
-    cursor: pointer; }
-  #header .fix-search button {
-    border-radius: 0;
-    right: 0;
-    width: 50px;
-    height: 35px;
-    line-height: 35px;
-    border: none;
-    background-color: #f10215;
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    outline: none; }
+    background-color: #efefef; }
 
 #fixhead {
   position: fixed;
@@ -390,13 +396,9 @@ a {
         height: 28px;
         line-height: 28px;
         font-size: 0; }
-      #fs .fs-inner .fs-col1 .cate_menu_item:hover {
-        background-color: #999395; }
       #fs .fs-inner .fs-col1 .cate_menu_lk {
         font-size: 14px;
         color: #fff; }
-      #fs .fs-inner .fs-col1 .cate_menu_lk:hover {
-        color: #c81623; }
       #fs .fs-inner .fs-col1 .cate_menu_line {
         padding: 0 4px;
         font-size: 12px; }
@@ -405,8 +407,51 @@ a {
       #fs .fs-inner .fs-col2 .slider {
         position: relative;
         margin-bottom: 10px;
-        height: 340px;
-        background-color: red; }
+        height: 340px; }
+        #fs .fs-inner .fs-col2 .slider ul li {
+          float: left;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        #fs .fs-inner .fs-col2 .slider ol {
+          display: flex;
+          justify-content: space-around;
+          position: absolute;
+          bottom: 5px;
+          left: 50%;
+          margin-left: -100px;
+          width: 200px;
+          height: 20px;
+          background-color: rgba(240, 240, 240, 0.5);
+          border-radius: 10px;
+          align-items: center;
+          z-index: 5; }
+        #fs .fs-inner .fs-col2 .slider ol li {
+          width: 12px;
+          height: 12px;
+          background-color: #FFFFFF;
+          border-radius: 50%;
+          text-indent: -9999px; }
+        #fs .fs-inner .fs-col2 .slider a {
+          position: absolute;
+          top: 50%;
+          margin-top: -30px;
+          display: block;
+          width: 30px;
+          height: 60px;
+          background-color: rgba(0, 0, 0, 0.2);
+          text-decoration: none;
+          color: white;
+          text-align: center;
+          line-height: 60px;
+          display: none;
+          z-index: 5; }
+        #fs .fs-inner .fs-col2 .slider .left {
+          left: 0; }
+        #fs .fs-inner .fs-col2 .slider .right {
+          right: 0; }
+        #fs .fs-inner .fs-col2 .slider .active {
+          background-color: #DB192A; }
       #fs .fs-inner .fs-col2 .slider-extend {
         margin-left: -10px;
         height: 130px; }
@@ -494,8 +539,11 @@ a {
         border-bottom: 1px solid #e6e6e6;
         position: relative;
         line-height: 14px; }
-      #fs .fs-inner .fs-col3 .news-content {
+      #fs .fs-inner .fs-col3 .news-content,
+      #fs .fs-inner .fs-col3 .broadcast-content {
         padding: 12px 0; }
+      #fs .fs-inner .fs-col3 .broadcast-content {
+        display: none; }
       #fs .fs-inner .fs-col3 .line {
         position: absolute;
         bottom: -1px;

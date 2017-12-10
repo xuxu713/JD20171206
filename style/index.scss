@@ -23,6 +23,7 @@
 a {
     color: #999;
     text-decoration: none;
+    font-size: 12px;
 }
 
 .wrap {
@@ -68,11 +69,37 @@ a {
         height: 30px;
         line-height: 30px;
         color: #999;
-        .dropdown {
+        .dropparent {
+            position: relative;
             margin-left: 200px;
             height: 28px;
             line-height: 28px;
             margin-top: 2px;
+        }
+        .subdrop {
+            position: absolute;
+            top: 28px;
+            left: 0;
+            width: 300px;
+            z-index: 60;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: white;
+            box-shadow: 1px 2px 1px rgba(0, 0, 0, .1);
+            display: none;
+            padding-top: 10px;
+            li {
+                float: left;
+                border: none;
+                width: 20%;
+                text-align: center;
+            }
+        }
+        .dropdown {
+            padding-left: 7px;
+            padding-right: 7px;
+            border: 1px solid #e3e4e5;
+            border-bottom: none;
             i {
                 color: #f10215;
             }
@@ -109,7 +136,6 @@ a {
         position: relative;
         float: left;
     }
-    
     .submyjd,
     .subservice,
     .subweb {
@@ -146,24 +172,66 @@ a {
         width: 1190px;
         left: -1036px;
         padding: 20px 0;
-        ul{
+        ul {
             float: left;
             width: 285px;
-            border-right:1px solid #eee ;
+            border-right: 1px solid #eee;
             padding-left: 11px;
-            li{
-                padding:2px 4px;
+            li {
+                padding: 2px 4px;
                 width: 25%;
             }
-            .spec{
-                margin:5px 0;
+            .spec {
+                margin: 5px 0;
             }
         }
     }
-    
 }
 
 #header {
+    .button {
+        border-radius: 0;
+        right: 0;
+        width: 50px;
+        height: 35px;
+        line-height: 35px;
+        border: none;
+        background-color: #f10215;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        outline: none;
+    }
+    .photo {
+        position: absolute;
+        right: 65px;
+        top: 10px;
+        width: 19px;
+        height: 15px;
+        overflow: hidden;
+        cursor: pointer;
+        background: url('../img/sprite-photo-search.png') no-repeat;
+        cursor: pointer;
+    }
+    .photo:hover {
+        background-position: -30px 0;
+    }
+    .text {
+        left: 0;
+        padding: 4px;
+        width: 490px;
+        height: 25px;
+        border: 1px solid #f10215;
+        line-height: 25px;
+        font-size: 14px;
+        color: #989898;
+        position: absolute;
+        top: 0;
+        outline: none;
+        color: #666;
+    }
     .wrap {
         position: relative;
         z-index: 10;
@@ -195,51 +263,26 @@ a {
         }
         .search {
             .form {
-                position: absolute;
+                position: relative;
                 left: 320px;
                 top: 25px;
                 width: 550px;
                 height: 35px;
-                .text {
-                    left: 0;
-                    padding: 4px;
-                    width: 490px;
-                    height: 25px;
-                    border: 1px solid #f10215;
-                    line-height: 25px;
-                    font-size: 14px;
-                    color: #989898;
-                    position: absolute;
-                    top: 0;
-                    outline: none;
-                }
-                .photo {
-                    position: absolute;
-                    right: 65px;
-                    top: 10px;
-                    width: 19px;
-                    height: 15px;
-                    overflow: hidden;
+            }
+            .text-ul {
+                width: 497px;
+                border: 1px solid #CCCCCC;
+                position: absolute;
+                left: 0;
+                top: 33px;
+                background-color: white;
+                color: #666666;
+                z-index: 95;
+                font-size: 12px;
+                //              display: none;
+                li {
+                    padding: 6px;
                     cursor: pointer;
-                    background: url('../img/sprite-photo-search.png') no-repeat;
-                }
-                .photo:hover {
-                    background-position: -30px 0;
-                }
-                .button {
-                    border-radius: 0;
-                    right: 0;
-                    width: 50px;
-                    height: 35px;
-                    line-height: 35px;
-                    border: none;
-                    background-color: #f10215;
-                    font-size: 20px;
-                    font-weight: 700;
-                    color: #fff;
-                    position: absolute;
-                    top: 0;
-                    outline: none;
                 }
             }
         }
@@ -343,49 +386,14 @@ a {
         }
     }
     .fix-search {
-        position: absolute;
+        position: relative;
         left: 320px;
         top: 6px;
         width: 550px;
         height: 35px;
         input {
-            left: 0;
-            padding: 4px;
-            width: 490px;
-            height: 25px;
-            border: 1px solid #f10215;
-            line-height: 25px;
-            font-size: 14px;
             border-color: #efefef;
             background-color: #efefef;
-            position: absolute;
-            top: 0;
-            outline: none;
-        }
-        span {
-            position: absolute;
-            right: 65px;
-            top: 10px;
-            width: 19px;
-            height: 15px;
-            overflow: hidden;
-            background: url('//misc.360buyimg.com/product/search/1.0.4/css/i/sprite-photo-search.png') no-repeat;
-            cursor: pointer;
-        }
-        button {
-            border-radius: 0;
-            right: 0;
-            width: 50px;
-            height: 35px;
-            line-height: 35px;
-            border: none;
-            background-color: #f10215;
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff;
-            position: absolute;
-            top: 0;
-            outline: none;
         }
     }
 }
@@ -452,15 +460,9 @@ a {
                 line-height: 28px;
                 font-size: 0;
             }
-            .cate_menu_item:hover {
-                background-color: #999395;
-            }
             .cate_menu_lk {
                 font-size: 14px;
                 color: #fff;
-            }
-            .cate_menu_lk:hover {
-                color: #c81623;
             }
             .cate_menu_line {
                 padding: 0 4px;
@@ -473,7 +475,57 @@ a {
                 position: relative;
                 margin-bottom: 10px;
                 height: 340px;
-                background-color: red;
+                ul li {
+                    float: left;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                ol {
+                    display: flex;
+                    justify-content: space-around;
+                    position: absolute;
+                    bottom: 5px;
+                    left: 50%;
+                    margin-left: -100px;
+                    width: 200px;
+                    height: 20px;
+                    background-color: rgba(240, 240, 240, 0.5);
+                    border-radius: 10px;
+                    align-items: center;
+                    z-index: 5;
+                }
+                ol li {
+                    width: 12px;
+                    height: 12px;
+                    background-color: #FFFFFF;
+                    border-radius: 50%;
+                    text-indent: -9999px;
+                }
+                a {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -30px;
+                    display: block;
+                    width: 30px;
+                    height: 60px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    text-decoration: none;
+                    color: white;
+                    text-align: center;
+                    line-height: 60px;
+                    display: none;
+                    z-index: 5;
+                }
+                .left {
+                    left: 0;
+                }
+                .right {
+                    right: 0;
+                }
+                .active {
+                    background-color: #DB192A;
+                }
             }
             .slider-extend {
                 margin-left: -10px;
@@ -580,8 +632,12 @@ a {
                 position: relative;
                 line-height: 14px;
             }
-            .news-content {
+            .news-content,
+            .broadcast-content {
                 padding: 12px 0;
+            }
+            .broadcast-content {
+                display: none;
             }
             .line {
                 position: absolute;

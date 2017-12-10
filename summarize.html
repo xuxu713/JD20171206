@@ -39,6 +39,19 @@
 			});
 		</script>
 		<!--第三：重复的效果实现，通过传参的不同，控制不同对象的实现效果，比如鼠标划过a变色，二级菜单的出现消失，轮播图、tab切换的实现-->
+		<!--第四：大轮播图显示隐藏按钮，小轮图没有该元素，可在复用函数里，设置该可变元素为null-->
+		<script>
+			if($('.left')) {
+				var $left = $('.left');
+			}
+			if($('.right')) {
+				var $right = $('.right');
+			} else {
+				var $left = null;
+				var $right = null;
+			}
+		</script>
+		<!--第五：动态的使用数据库数据来构建相关内容，通过ajax的post方法传参，php取出数据库对应数据，再解析json使用-->
 	</body>
 
 </html>
