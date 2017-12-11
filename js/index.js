@@ -1,4 +1,4 @@
-function phpMysql(obj, ele) {
+/*function phpMysql(obj, ele) {
 	$.post('php/test.php', {
 		obj: obj,
 		ele: ele
@@ -17,7 +17,7 @@ function phpMysql(obj, ele) {
 }
 phpMysql('.submyjd .list-top', 'a');
 phpMysql('.submyjd .list-bottom', 'a');
-phpMysql('.subdrop .subdropol', 'a');
+phpMysql('.subdrop .subdropol', 'a');*/
 
 function banner(box) { //轮播图效果
 	var $box = $(box);

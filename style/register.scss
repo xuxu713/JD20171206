@@ -97,7 +97,7 @@ input::-webkit-input-placeholder {
         }
         .i-status {
             position: absolute;
-//          display: none;
+            display: none;
             width: 16px;
             height: 16px;
             top: 20px;
@@ -115,6 +115,9 @@ input::-webkit-input-placeholder {
                 height: 16px;
                 background: $bgurl;
                 background-position: 0 -100px;
+            }
+            span{
+                font-size: 12px;
             }
         }
         .btn-register {

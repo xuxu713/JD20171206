@@ -96,6 +96,7 @@ input::-webkit-input-placeholder {
 }
 .section .main .i-status {
   position: absolute;
+  display: none;
   width: 16px;
   height: 16px;
   top: 20px;
@@ -114,6 +115,9 @@ input::-webkit-input-placeholder {
   height: 16px;
   background: url("//misc.360buyimg.com/user/reg/1.0.0/css/i/icon.png") no-repeat;
   background-position: 0 -100px;
+}
+.section .main .input-tip span {
+  font-size: 12px;
 }
 .section .main .btn-register {
   width: 100%;
