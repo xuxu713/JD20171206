@@ -244,7 +244,8 @@ a {
     background-color: white;
     color: #666666;
     z-index: 95;
-    font-size: 12px; }
+    font-size: 12px;
+    display: none; }
     #header .wrap .search .text-ul li {
       padding: 6px;
       cursor: pointer; }
