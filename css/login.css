@@ -231,28 +231,57 @@ li {
   margin: 30px auto;
   position: relative;
 }
-#main .qrcode-login .qrcode {
+#main .qrcode-login .zhezhao {
+  display: block;
+  position: absolute;
+  width: 170px;
+  background: #000;
+  filter: alpha(opacity=60);
+  opacity: .6;
+  height: 163px;
+  left: 66px;
+  z-index: 9;
+  top: 0;
+  text-align: center;
+  line-height: 100px;
+  visibility: hidden;
+}
+#main .qrcode-login .qrcode1 {
   border: 1px solid #f4f4f4;
   padding: 8px;
   width: 155px;
   margin: auto;
+  background-color: white;
+  position: relative;
 }
-#main .qrcode-login .qrcode img {
+#main .qrcode-login .qrcode1 .qrcode-text {
+  position: relative;
+}
+#main .qrcode-login .qrcode1 img {
   background: #000;
 }
-#main .qrcode-login .qrcode a {
+#main .qrcode-login .qrcode1 a {
   display: block;
   background: #e4393c;
   width: 80px;
   height: 30px;
   position: absolute;
   top: 95px;
-  left: 113px;
+  left: 42px;
   line-height: 30px;
-  opacity: 0;
-  z-index: 19;
+  visibility: hidden;
+  z-index: 40;
   color: #fbfbfb;
-  text-decoration: none;
+}
+#main .qrcode-login .qrcode-help {
+  position: absolute;
+  right: -18px;
+  top: -2px;
+  width: 141px;
+  height: 168px;
+  background: url("//misc.360buyimg.com/user/passport/1.0.0/css/i/phone-orange.png") no-repeat;
+  z-index: 50;
+  display: none;
 }
 #main .qrcode-login .qrcode-panel {
   width: 257px;
@@ -261,6 +290,10 @@ li {
 }
 #main .qrcode-login .qrcode-panel a {
   color: #e4393c;
+}
+#main .qrcode-login .qrcode-panel span,
+#main .qrcode-login .qrcode-panel a {
+  font-size: 12px;
 }
 #main .qrcode-login .qrcode-adv {
   width: 306px;

@@ -1,6 +1,8 @@
 <?php
 	$obj = $_REQUEST['obj'];
+//	$obj = '.submyjd .list-top';
 	$ele = $_REQUEST['ele'];
+//	$ele = 'a';
 
 	mysql_connect("localhost:3306","root","12345678");
     mysql_select_db("xuyuanjd");

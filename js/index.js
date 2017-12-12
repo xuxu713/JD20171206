@@ -1,8 +1,9 @@
-/*function phpMysql(obj, ele) {
+function phpMysql(obj, ele) {
 	$.post('php/test.php', {
 		obj: obj,
 		ele: ele
 	}, function(data) {
+		console.log(data);
 		var arr = JSON.parse(data);
 		var html = '';
 		for(var i = 0; i < arr.length; i++) {
@@ -17,7 +18,7 @@
 }
 phpMysql('.submyjd .list-top', 'a');
 phpMysql('.submyjd .list-bottom', 'a');
-phpMysql('.subdrop .subdropol', 'a');*/
+phpMysql('.subdrop .subdropol', 'a');
 
 function banner(box) { //轮播图效果
 	var $box = $(box);

@@ -3,7 +3,8 @@ body {
     color: #666;
     background: #fff;
 }
-li{
+
+li {
     list-style: none;
 }
 
@@ -234,12 +235,31 @@ li{
         text-align: center;
         margin: 30px auto;
         position: relative;
-        //      display: none;
-        .qrcode {
+        .zhezhao {
+            display: block;
+            position: absolute;
+            width: 170px;
+            background: #000;
+            filter: alpha(opacity=60);
+            opacity: .6;
+            height: 163px;
+            left: 66px;
+            z-index: 9;
+            top: 0;
+            text-align: center;
+            line-height: 100px;
+            visibility: hidden;
+        }
+        .qrcode1 {
             border: 1px solid #f4f4f4;
             padding: 8px;
             width: 155px;
             margin: auto;
+            background-color: white;
+            position: relative;
+            .qrcode-text {
+                position: relative;
+            }
             img {
                 background: #000;
             }
@@ -250,13 +270,22 @@ li{
                 height: 30px;
                 position: absolute;
                 top: 95px;
-                left: 113px;
+                left: 42px;
                 line-height: 30px;
-                opacity: 0;
-                z-index: 19;
+                visibility: hidden;
+                z-index: 40;
                 color: #fbfbfb;
-                text-decoration: none;
             }
+        }
+        .qrcode-help {
+            position: absolute;
+            right: -18px;
+            top: -2px;
+            width: 141px;
+            height: 168px;
+            background: url('//misc.360buyimg.com/user/passport/1.0.0/css/i/phone-orange.png') no-repeat;
+            z-index: 50;
+            display: none;
         }
         .qrcode-panel {
             width: 257px;
@@ -264,6 +293,10 @@ li{
             text-align: center;
             a {
                 color: #e4393c;
+            }
+            span,
+            a {
+                font-size: 12px;
             }
         }
         .qrcode-adv {

@@ -8,9 +8,9 @@ function appearUnderline(obj) {
 }
 appearUnderline('.regist-link');
 appearUnderline('.item-fore3');
-tabswitch();//点击login.html>main>login-tab，显示隐藏对应的qrcode-login和username-login
+tabswitch(); //点击login.html>main>login-tab，显示隐藏对应的qrcode-login和username-login
 
-function tabswitch() {//点击元素，显示指定的元素
+function tabswitch() { //点击元素，显示指定的元素
 	var $qrcodeLogin = $('.qrcode-login');
 	var $usernameLogin = $('.username-login');
 	var $codeLogin = $('.codelogin');
@@ -71,3 +71,41 @@ function hoverColorStay() { //划过盒子，指定子元素变色，滑出时�
 		}
 	})
 }
+
+function showQrcodeHelpImg() { //手机扫码登录，滑出帮助图片
+	var $qrcodeHelp = $('.qrcode-help');
+	var $qrcode = $('.qrcode1');
+	var $qrcodeText = $('.qrcode-text');
+	$qrcode.hover(function() {
+		$qrcode.stop().animate({
+				'left': -65
+			}, 300),
+			$qrcodeHelp.delay(100).stop().fadeIn(300);
+			return false;
+	}, function() {
+		$qrcode.delay(100).stop().animate({
+				'left': 0
+			}, 300),
+			$qrcodeHelp.stop().fadeOut(300);
+			return false;
+	});
+}
+showQrcodeHelpImg();
+
+function refresh() { //每次刷新，延时1s后遮罩出现，点击刷新按钮遮罩消失，刷新按钮消失。
+	var $refrshButton = $('.qrcode-text a');
+	var timer = setTimeout(function() {
+		$('.zhezhao').css('visibility','visible');
+		$refrshButton.css('visibility','visible');
+	}, 1000);
+	$refrshButton.on('click', function() {
+		clearTimeout(timer);
+		$('.zhezhao').hide();
+		$refrshButton.hide();
+		timer = setTimeout(function() {
+			$('.zhezhao').show();
+			$refrshButton.show();
+		}, 1000);
+	});
+}
+refresh();
