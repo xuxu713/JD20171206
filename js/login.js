@@ -81,13 +81,13 @@ function showQrcodeHelpImg() { //手机扫码登录，滑出帮助图片
 				'left': -65
 			}, 300),
 			$qrcodeHelp.delay(100).stop().fadeIn(300);
-			return false;
+		return false;
 	}, function() {
 		$qrcode.delay(100).stop().animate({
 				'left': 0
 			}, 300),
 			$qrcodeHelp.stop().fadeOut(300);
-			return false;
+		return false;
 	});
 }
 showQrcodeHelpImg();
@@ -95,8 +95,8 @@ showQrcodeHelpImg();
 function refresh() { //每次刷新，延时1s后遮罩出现，点击刷新按钮遮罩消失，刷新按钮消失。
 	var $refrshButton = $('.qrcode-text a');
 	var timer = setTimeout(function() {
-		$('.zhezhao').css('visibility','visible');
-		$refrshButton.css('visibility','visible');
+		$('.zhezhao').css('visibility', 'visible');
+		$refrshButton.css('visibility', 'visible');
 	}, 1000);
 	$refrshButton.on('click', function() {
 		clearTimeout(timer);
@@ -109,3 +109,32 @@ function refresh() { //每次刷新，延时1s后遮罩出现，点击刷新按�
 	});
 }
 refresh();
+
+function addCookie(key, value, day) {
+	var date = new Date(); 
+	date.setDate(date.getDate() + day); 
+	document.cookie = key + '=' + encodeURI(value) + ';expires=' + date; 
+}
+$('#loginsubmit').on('click', function() {
+	var $username = $('#username').val();
+	var $password = $('#password').val();
+	$.ajax({
+		type: 'post',
+//		url: '../php/login.php',
+		url: '../JD20171206/php/login.php',
+		data: { 
+			name: $username,
+			pass: $password
+		},
+		success: function(data) { 
+			if(!data) { 
+				$('#error').css('visibility','visible');
+				$('#password').val('');
+			} else {
+				addCookie('uesrname', $username, 7);
+				location.href = 'https://www.jd.com/';
+				$('#error').css('visibility','hidden');
+			}
+		}
+	})
+});

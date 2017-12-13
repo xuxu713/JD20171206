@@ -398,13 +398,15 @@ a {
                 overflow: hidden;
                 position: relative;
                 left: 10px;
-                //          display: none;
-                img {
+                 display: none;
+            }
+            #bpic {
+                    width:800px;
+                    height: 640px;
                     position: absolute;
                     left: 0px;
                     top: 0px;
                 }
-            }
         }
         img {
             border: 0;
@@ -429,44 +431,47 @@ a {
             position: absolute;
             left: 0px;
             top: 0px;
-            //display: none;
+             display: none;
         }
         .spec-list {
             position: absolute;
+            left:0;
             top:390px;
             width: 310px;
             height: 54px;
             overflow: hidden;
-            padding: 0 20px 0 34px;
+//          padding: 0 20px 0 34px;
+//          float: left;
             .spec-control {
-                display: block;
-                position: absolute;
-                top: 0;
+                float: left;
+//              display: block;
+//              position: absolute;
+//              top: 0;
                 width: 14px;
-                height: 54px;
+                height: 50px;
                 background: url('../img/newicon20140910.png') no-repeat 0 0;
             }
             .spec-items {
+                float: left;
                 position: absolute;
                 width: 310px;
-                height: 54px;
-                overflow: hidden;
-                top: 0;
-                left: 36px;
+                height: 50px;
+//              overflow: hidden;
+//              top: 0;
+//              left: 36px;
             }
             ul {
+                float: left;
                 position: absolute;
-                width: 372px;
-                height: 54px;
+//              width: 372px;
+//              height: 50px;
                 top: 0px;
                 left: 0px;
-            }
-            li {
+                 li {
+                     float: left;
                 width: 62px;
-                text-align: center;
-                font-size: 0;
-                position: relative;
-                float: left;
+                height: 50px;
+//              position: relative;
                 img {
                     width: 50px;
                     height: 50px;
@@ -474,6 +479,8 @@ a {
                     display: block;
                 }
             }
+            }
+           
             #left {
                 left: 14px;
                 //              background-position: 0 -346px;

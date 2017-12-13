@@ -9,7 +9,7 @@ function showUser() { //显示和隐藏注册用户名的相关提示信息
 	});
 }
 
-function judeInput(obj) { //判断输入框是否输入，输入的合法性。
+function judeInput(obj) { //判断输入框是否输入，输入全部合法性可跳转。
 	var bstop = false;
 	var $obj = $(obj);
 	var $placeholder = null;
@@ -29,7 +29,9 @@ function judeInput(obj) { //判断输入框是否输入，输入的合法性。
 		}
 		if($(this).val() != '' && 'bstop==true') {
 			$inputtip.hide();
+			bstop == true
 		}
+		return false;
 	});
 	$obj.on('blur', function() {
 		var accountreg1 = /^[\u4e00-\u9fa5a-zA-Z0-9\-\_]{4,20}$/g;
@@ -39,16 +41,13 @@ function judeInput(obj) { //判断输入框是否输入，输入的合法性。
 		var $inputtip = $(this).parent().siblings('.input-tip');
 		var $tipspan = $inputtip.children('span');
 		var $iStatus = $(this).siblings('.i-status');
+		var username = $(this).val();
+
 		if($(this).attr('id') == $('#form-account').attr('id')) {
 			if($(this).val() == '') {
 				$(this).attr('placeholder', '您的账户名和登录名')
 				$inputtip.hide();
 				bstop = false;
-			} else if((accountreg1.test($(this).val())) && (accountreg2.test($(this).val()))) {
-				$inputtip.hide();
-				$tipspan.html('支持中文、字母、数字、“-”“_”的组合，4-20个字符');
-				$tipspan.css('color', '#ccc');
-				bstop = true;
 			} else if(accountreg3.test($(this).val())) {
 				$inputtip.show();
 				$tipspan.html('用户名不能是纯数字，请重新输入！');
@@ -59,8 +58,14 @@ function judeInput(obj) { //判断输入框是否输入，输入的合法性。
 				$tipspan.html('长度只能在4-20个字符之间');
 				$tipspan.css('color', '#e22');
 				bstop = false;
+			} else if((accountreg1.test($(this).val())) && (accountreg2.test($(this).val()))) {
+				$inputtip.hide();
+				$tipspan.html('支持中文、字母、数字、“-”“_”的组合，4-20个字符');
+				$tipspan.css('color', '#ccc');
+				bstop = true;
 			}
 		}
+
 		if($(this).attr('id') == $('#form-phone').attr('id')) {
 			if($(this).val() == '') {
 				$(this).attr('placeholder', '建议使用常用手机')
@@ -110,7 +115,7 @@ function judeInput(obj) { //判断输入框是否输入，输入的合法性。
 				bstop = true;
 			}
 		}
-		if(bstop == true) {
+		if(bstop) {
 			$iStatus.css('display', 'block');
 		} else {
 			$iStatus.css('display', 'none');
@@ -165,12 +170,49 @@ function judeInput(obj) { //判断输入框是否输入，输入的合法性。
 				}
 			}
 		}
-
-		if(bstop == true) {
+		if(bstop) {
 			$iStatus.css('display', 'block');
 			$inputtip.show();
 		} else {
 			$iStatus.css('display', 'none');
+		}
+	});
+
+	var bstop1 = false; //不通过
+	$('#form-account').on('blur', function() {
+		var username = $(this).val();
+		if(username != '') {
+			$.ajax({
+				type: 'post',
+				url: '../JD20171206/php/register.php',
+//				url: '../php/register.php',
+				data: {
+					name: username,
+					pass:$('#password').val()
+				},
+				success: function(data) {
+					alert(data);
+					if(!data) {
+						$('#form-account').siblings('.i-status').show();
+						bstop1 = true;
+					} else {
+						$('#form-account').parent().siblings('.input-tip').children('span').html('该用户名已被使用，请更换其它用户名');
+						$('#form-account').parent().siblings('.input-tip').show();
+						$('#form-account').siblings('.i-status').hide();
+						bstop1 = false;
+					}
+					
+				}
+			})
+		}
+	});
+	
+	$('form').on('submit', function() {
+		if(bstop&&bstop1) {
+			alert('ok');
+			$(window).attr('location', 'https://www.jd.com/');
+		} else {
+			alert('输入的信息不符合要求，请核对，谢谢！');
 		}
 	});
 }
@@ -202,19 +244,54 @@ function phoneCode() { //生成验证码，点击更改验证码，赋给前面�
 	});
 }
 phoneCode();
-function aboutDialog(){//点击取消和右上角关闭按钮，遮罩和条款框消失，跳转到京东主页。点击同意，遮罩和条款框消失。
-	var $yes=$('.protocol-button button');
-	var $zhezhao=$('.zhezhao');
-	var $dialog=$('.ui-dialog');
-	var $close=$('.ui-dialog-close');
-	$yes.on('click',function(){
+
+function aboutDialog() { //点击取消和右上角关闭按钮，遮罩和条款框消失，跳转到京东主页。点击同意，遮罩和条款框消失。
+	var $yes = $('.protocol-button button');
+	var $zhezhao = $('.zhezhao');
+	var $dialog = $('.ui-dialog');
+	var $close = $('.ui-dialog-close');
+	$yes.on('click', function() {
 		$zhezhao.hide();
 		$dialog.hide();
 	});
-	$close.on('click',function(){
+	$close.on('click', function() {
 		$zhezhao.hide();
 		$dialog.hide();
-		window.location.href='https://www.jd.com/';
+		window.location.href = 'https://www.jd.com/';
 	});
 }
 aboutDialog();
+//表单验证-用户名
+/*(function() {
+	var bstop = false; //不通过
+	$('#form-account').on('blur', function() {
+		var username = $(this).val();
+		if(username != '') {
+			$.ajax({
+				type: 'post',
+				url: '../JD20171206/php/reg.php',
+				data: {
+					name: username
+				},
+				success: function(data) {
+					if(!data) {
+						console.log('no');
+						$('#form-account').siblings('.i-status').show();
+						bstop = true;
+					} else {
+						console.log('yes');
+						$('#form-account').parent().siblings('.input-tip').children('span').html('该用户名已被使用，请更换其它用户名');
+						$('#form-account').parent().siblings('.input-tip').show();
+						$('#form-account').siblings('.i-status').hide();
+						bstop = false;
+					}
+				}
+			})
+		}
+	});
+	$('form').on('submit', function() {
+		if(bstop) {
+			return false; //阻止按钮跳转。
+		}
+	});
+})();*/

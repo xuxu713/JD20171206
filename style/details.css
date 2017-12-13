@@ -340,11 +340,14 @@ a {
       float: left;
       overflow: hidden;
       position: relative;
-      left: 10px; }
-      .product .preview .wwrap #bf img {
-        position: absolute;
-        left: 0px;
-        top: 0px; }
+      left: 10px;
+      display: none; }
+    .product .preview .wwrap #bpic {
+      width: 800px;
+      height: 640px;
+      position: absolute;
+      left: 0px;
+      top: 0px; }
   .product .preview img {
     border: 0;
     vertical-align: middle; }
@@ -364,45 +367,39 @@ a {
     opacity: 0.3;
     position: absolute;
     left: 0px;
-    top: 0px; }
+    top: 0px;
+    display: none; }
   .product .preview .spec-list {
     position: absolute;
+    left: 0;
     top: 390px;
     width: 310px;
     height: 54px;
-    overflow: hidden;
-    padding: 0 20px 0 34px; }
+    overflow: hidden; }
     .product .preview .spec-list .spec-control {
-      display: block;
-      position: absolute;
-      top: 0;
+      float: left;
       width: 14px;
-      height: 54px;
+      height: 50px;
       background: url("../img/newicon20140910.png") no-repeat 0 0; }
     .product .preview .spec-list .spec-items {
+      float: left;
       position: absolute;
       width: 310px;
-      height: 54px;
-      overflow: hidden;
-      top: 0;
-      left: 36px; }
+      height: 50px; }
     .product .preview .spec-list ul {
+      float: left;
       position: absolute;
-      width: 372px;
-      height: 54px;
       top: 0px;
       left: 0px; }
-    .product .preview .spec-list li {
-      width: 62px;
-      text-align: center;
-      font-size: 0;
-      position: relative;
-      float: left; }
-      .product .preview .spec-list li img {
-        width: 50px;
-        height: 50px;
-        padding: 2px;
-        display: block; }
+      .product .preview .spec-list ul li {
+        float: left;
+        width: 62px;
+        height: 50px; }
+        .product .preview .spec-list ul li img {
+          width: 50px;
+          height: 50px;
+          padding: 2px;
+          display: block; }
     .product .preview .spec-list #left {
       left: 14px;
       background-position: -56px -346px; }

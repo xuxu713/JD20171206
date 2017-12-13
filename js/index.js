@@ -1,5 +1,5 @@
-/*function phpMysql(obj, ele) {
-	$.post('php/test.php', {
+/*function phpMysql1(obj, ele) {
+	$.post('php/test.php', {//url: '../JD20171206/php/reg.php',
 		obj: obj,
 		ele: ele
 	}, function(data) {
@@ -15,10 +15,27 @@
 		hoverColor('.spesubweb', 'a'); //index.html>shortcut>nav-li>二级菜单，a字体变色
 		hoverColor('.subdrop', 'a');
 	})
-}*/
-//phpMysql('.submyjd .list-top', 'a');
-//phpMysql('.submyjd .list-bottom', 'a');
-//phpMysql('.subdrop .subdropol', 'a');
+}
+phpMysql('.submyjd .list-top', 'a');
+phpMysql('.submyjd .list-bottom', 'a');
+phpMysql('.subdrop .subdropol', 'a');*/
+/*function phpMysql2(){
+	$.post('php/test.php', {
+//		obj: obj,
+//		ele: ele
+	}, function($str) {
+		console.log($str);
+		var arr = JSON.parse($str);
+		var html = '';
+		for(var i = 0; i < arr.length; i++) {
+//			html += '<li><a href="#">' + arr[i].title + '</a></li>';
+			html += '<li class="sk-item"><div><a href="//miaosha.jd.com/#1014500014" target="_blank" class="sk_item_pic_lk"><img src='+str[i].img+'" alt="谷源道 海鲜礼盒大礼包3298型海鲜礼券礼品卡" title="谷源道 海鲜礼盒大礼包3298型海鲜礼券礼品卡" class="sk_item_img"><p class="sk_item_name">' + str[i].title + '</p></a><span class="sk_item_shadow"></span></div><p class="sk_item_price"><span class="sk_item_price_new">￥298</span><span class="sk_item_price_origin"><del>1098</del></span></p></li>';
+		}
+		$('.sk-item-ul').html(html);
+	})
+}
+phpMysql2();*/
+//phpMysql2('.sk-item-ul');
 
 function banner(box) { //轮播图效果
 	var $box = $(box);

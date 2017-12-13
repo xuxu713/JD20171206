@@ -123,6 +123,27 @@ li {
     margin: 30px auto;
     position: relative;
     display: none; }
+    #main .username-login .msg-error {
+      visibility: hidden;
+      position: relative;
+      top: -10px;
+      background: #ffebeb;
+      color: #e4393c;
+      border: 1px solid #faccc6;
+      line-height: 20px;
+      height: 20px !important;
+      margin: 5px 0;
+      font-size: 12px; }
+      #main .username-login .msg-error b {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        display: block;
+        margin-top: -8px;
+        width: 16px;
+        height: 16px;
+        overflow: hidden;
+        background: url(//misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2016-1124/i/pwd-icons-new.png) -104px -49px no-repeat; }
     #main .username-login .item {
       position: relative;
       margin-bottom: 20px;
@@ -181,13 +202,13 @@ li {
         position: relative; }
       #main .username-login .item-fore4 .btn-img {
         border: 1px solid #e85356;
-        display: block;
         width: 302px;
         background: #e4393c;
-        height: 31px;
-        line-height: 31px;
+        height: 100%;
+        text-align: center;
         color: #fff;
-        font-size: 20px; }
+        font-size: 20px;
+        padding: 3px; }
   #main .qrcode-login {
     width: 306px;
     text-align: center;

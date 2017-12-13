@@ -32,12 +32,13 @@
 					<div class="main clear">
 						<!--个人注册表单-->
 						<div class="reg-form">
-							<form>
+							<form action="JD20171206/php/register.php" method="post"  onsubmit="return false;">
+							<!--<form action="php/register.php" method="post">-->
 								<div class="line">
 									<!--输入框的div，class都设置为form-item-->
 									<div class="form-item">
-										<label>用　户　名</label>
-										<input type="text" id="form-account" class="field" placeholder="您的账户名和登录名" />
+										<label for="username">用　户　名</label>
+										<input type="text" name="username" id="form-account" class="field" placeholder="您的账户名和登录名" />
 										<i class="i-status"></i>
 									</div>
 									<!--输入框提示的div，class都设置为input-tip-->
@@ -48,8 +49,8 @@
 								</div>
 								<div class="line">
 									<div class="form-item">
-										<label>设 置 密 码</label>
-										<input type="password" id="form-pwd" class="field" placeholder="建议至少使用两种字符组合" />
+										<label  for="password">设 置 密 码</label>
+										<input type="password" name="password" id="form-pwd" class="field" placeholder="建议至少使用两种字符组合" />
 										<i class="i-status"></i>
 									</div>
 									<div class="input-tip">
@@ -59,8 +60,8 @@
 								</div>
 								<div class="line">
 									<div class="form-item">
-										<label>确 认 密 码</label>
-										<input type="password" id="form-pwdrepeat" class="field" placeholder="请再次输入密码" />
+										<label  for="repass">确 认 密 码</label>
+										<input type="password" name="repass" id="form-pwdrepeat" class="field" placeholder="请再次输入密码" />
 										<i class="i-status"></i>
 									</div>
 									<div class="input-tip">
@@ -70,8 +71,8 @@
 								</div>
 								<div class="line">
 									<div class="form-item">
-										<label>中国 0086</label>
-										<input type="text" id="form-phone" class="field" placeholder="建议使用常用手机" />
+										<label  for="phone">中国 0086</label>
+										<input type="text" name="phone" id="form-phone" class="field" placeholder="建议使用常用手机" />
 										<i class="i-status"></i>
 									</div>
 									<div class="input-tip">
@@ -101,7 +102,7 @@
 									</div>
 								</div>
 								<div>
-									<button type="submit" class="btn-register">立即注册</button>
+									<input type="submit" value="立即注册" name="submit" class="btn-register"/>
 								</div>
 							</form>
 						</div>
