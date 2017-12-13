@@ -1,9 +1,3 @@
-#footer .mod_service_unit p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
 @font-face {
   font-family: iconfont;
   src: url("../font/iconfont.eot") format("embedded-opentype"), url("../font/iconfont.woff") format("woff"), url("../font/iconfont.ttf") format("truetype"), url("../font/iconfont.svg") format("svg");
@@ -16,8 +10,6 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   color: #666;
 }
 
@@ -408,7 +400,6 @@ a {
   overflow: hidden;
   position: relative;
   left: 10px;
-  z-index: 50;
   display: none;
 }
 .product .preview .wwrap #bpic {
@@ -446,9 +437,9 @@ a {
 .product .preview #ulist {
   position: absolute;
   left: 0px;
-  bottom: 15px;
-  width: 402px;
-  height: 56px;
+  top: 390px;
+  width: 310px;
+  height: 54px;
   overflow: hidden;
 }
 .product .preview #ulist a {
@@ -464,6 +455,7 @@ a {
 .product .preview #list {
   float: left;
   margin-left: 18px;
+  width: 310px;
   width: 372px;
   position: relative;
 }
@@ -471,18 +463,18 @@ a {
   list-style: none;
   float: left;
   position: absolute;
-  left: 0px;
+  /*left: 0px;*/
   top: 0px;
 }
-.product .preview ul li {
+.product .preview li {
   float: left;
-  width: 56px;
-  height: 56px;
+  width: 62px;
+  height: 50px;
   padding-right: 6px;
 }
-.product .preview ul li img {
-  width: 52px;
-  height: 52px;
+.product .preview li img {
+  width: 45px;
+  height: 45px;
   border: 1px solid #ccc;
 }
 .product .preview #right {
@@ -543,274 +535,10 @@ a {
 }
 .product .item-ext {
   width: 244px;
+  float: left;
   margin-left: -244px;
   overflow: hidden;
   background: #fff;
 }
-.product #itemInfo {
-  position: relative;
-  width: 100%;
-}
-.product #name {
-  padding: 15px 10px 10px 0;
-}
-.product #name h1 {
-  line-height: 1.5em;
-  overflow: hidden;
-  font-weight: 700;
-  font-family: arial, "microsoft yahei";
-  font-size: 16px;
-}
-.product #name .p-ad {
-  font-family: arial, "microsoft yahei";
-  color: #e3393c;
-  font-size: 14px;
-  line-height: 20px;
-  word-break: break-all;
-}
-.product #name .p-author {
-  padding-top: 10px;
-  line-height: 20px;
-  padding-bottom: 8px;
-}
-.product #name .p-author a {
-  color: #005aa0;
-}
-.product #summary {
-  width: 100%;
-  position: relative;
-  z-index: 3;
-}
-.product #summary #summary-price {
-  padding-top: 10px;
-  padding-bottom: 0;
-  padding-right: 81px;
-  line-height: 30px;
-  background: #f7f7f7;
-}
-.product #summary #summary-price .dd {
-  width: 432px;
-}
-.product #summary #summary-price .dd .p-price {
-  display: inline-block;
-  vertical-align: middle;
-  color: #e4393c;
-  font-size: 20px;
-}
-.product #summary #summary-price .dd .p-discount {
-  margin-left: 3px;
-}
-.product #summary #summary-price .dd .pricing {
-  color: #999;
-}
-.product #summary #summary-price .dd del {
-  text-decoration: line-through;
-}
-.product #summary .summary-top {
-  position: relative;
-  padding: 0 0 10px;
-  margin-bottom: 10px;
-  background: #f7f7f7;
-}
-.product #summary #summary2 {
-  position: relative;
-  width: 516px;
-  background: #f7f7f7;
-  height: 60px;
-}
-.product #summary .dt {
-  float: left;
-  width: 72px;
-  display: inline;
-  text-align: right;
-  font-family: simsun;
-}
-.product #summary #summary4 a {
-  color: #e4393c;
-  margin: 0 6px;
-}
-.product #summary #summary2,
-.product #summary #summary3,
-.product #summary #summary4 {
-  padding-top: 10px;
-}
 
-.box2 {
-  margin: 20px;
-  height: 267px;
-  margin-bottom: 50px;
-}
-.box2 .wrap {
-  border: 2px solid #666;
-}
-.box2 .renqi {
-  height: 30px;
-  background: #ACACAC;
-}
-.box2 .renqi a {
-  height: 34px;
-  line-height: 34px;
-  padding: 0 12px;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-top: 2px solid red;
-  color: #e4393c;
-  background: white;
-  padding: 5px;
-}
-.box2 .mclist {
-  margin-top: 10px;
-}
-.box2 .mclist ul {
-  height: 235px;
-  display: flex;
-  justify-content: space-around;
-}
-.box2 .mclist ul li {
-  margin-left: 10px;
-}
-
-#footer {
-  height: 500px;
-  background-color: #eaeaea;
-  padding-bottom: 67px;
-}
-#footer .mod_service {
-  padding: 30px 0;
-  border-bottom: 1px solid #dedede;
-}
-#footer .mod_service ul {
-  overflow: hidden;
-  height: 42px;
-}
-#footer .mod_service ul li {
-  float: left;
-  width: 297px;
-}
-#footer .mod_service_unit {
-  position: relative;
-  margin: 0 auto;
-  padding-left: 45px;
-  width: 180px;
-}
-#footer .mod_service_unit p {
-  width: 100%;
-  height: 42px;
-  line-height: 42px;
-  font-size: 18px;
-  font-weight: 700;
-  color: #444;
-}
-#footer .mod_service_tit {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 36px;
-  height: 42px;
-  background-image: url(//misc.360buyimg.com/mtd/pc/index/2.0.0/home/images/ico_service.png);
-  text-indent: -999px;
-}
-#footer .mod_service_duo {
-  background-position: 0 0;
-}
-#footer .mod_service_kuai {
-  background-position: 0 -43px;
-}
-#footer .mod_service_hao {
-  background-position: 0 -86px;
-}
-#footer .mod_service_sheng {
-  background-position: 0 -129px;
-}
-#footer .mod_help {
-  padding: 20px 0;
-}
-#footer .mod_help_list {
-  overflow: hidden;
-  height: 160px;
-}
-#footer .mod_help_list .mod_help_nav {
-  float: left;
-  width: 198px;
-  line-height: 22px;
-}
-#footer .mod_help_list .mod_help_nav a {
-  color: #666;
-}
-#footer .mod_help_list .mod_help_nav_tit {
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-#footer .mod_help_cover {
-  float: right;
-  width: 200px;
-  height: 150px;
-  background: url(//misc.360buyimg.com/mtd/pc/index/2.0.0/home/images/ico_footer.png) no-repeat 0 0;
-}
-#footer .mod_help_cover_tit {
-  margin-bottom: 15px;
-  font-size: 14px;
-  text-align: center;
-}
-#footer .mod_help_cover_con {
-  padding: 0 10px;
-}
-#footer .mod_help_cover_more {
-  text-align: right;
-}
-#footer .mod_help_cover_more a {
-  color: #666;
-}
-#footer .mod_copyright_inner {
-  padding: 15px 0;
-  border-top: 1px solid #e1e1e1;
-  text-align: center;
-}
-#footer .mod_copyright_inner a {
-  color: #666;
-}
-#footer .mod_copyright_split {
-  margin: 0 10px;
-  color: #ccc;
-}
-#footer .mod_copyright_info {
-  padding: 10px 0;
-  line-height: 22px;
-  color: #999;
-}
-#footer .mod_copyright_info span {
-  font-size: 12px;
-}
-#footer .mod_copyright_info a {
-  color: #999;
-}
-#footer .mod_copyright_auth_ico {
-  overflow: hidden;
-  display: inline-block;
-  margin: 0 3px;
-  width: 103px;
-  height: 32px;
-  background-image: url(//misc.360buyimg.com/mtd/pc/index/2.0.0/home/images/ico_footer.png);
-  line-height: 1000px;
-}
-#footer .mod_copyright_auth_ico_1 {
-  background-position: 0 -151px;
-}
-#footer .mod_copyright_auth_ico_2 {
-  background-position: -104px -151px;
-}
-#footer .mod_copyright_auth_ico_3 {
-  background-position: 0 -184px;
-}
-#footer .mod_copyright_auth_ico_4 {
-  background-position: -104px -184px;
-}
-#footer .mod_copyright_auth_ico_5 {
-  background-position: 0 -217px;
-}
-#footer .mod_copyright_auth_ico_6 {
-  background-position: -104px -217px;
-}
-
-/*# sourceMappingURL=details.css.map */
+/*# sourceMappingURL=.details.css.map */

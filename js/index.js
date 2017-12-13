@@ -104,7 +104,7 @@ tab('.news', '.newstab', '.newsli');
 $(window).scroll(function() { //实现顶部悬浮搜索框，index.html滚轮下拉距离大于800时出现。
 	var $scrolltop = $(document).scrollTop();
 	var $fixhead = $('#fixhead');
-	if($scrolltop >= 200) {
+	if($scrolltop >= 800) {
 		$fixhead.show();
 		$fixhead.stop().animate({
 			height: '48px'
@@ -290,3 +290,39 @@ function shangcheng() { //商城效果，左右移动来更换图片
 	});
 	timer = setInterval(rightClick, 2000);
 }
+
+function Sc() {//秒杀的商城效果
+	var $left = $('#left');
+	var $right = $('#right');
+	var $num = 5;
+	var $list = $('#list li');
+	var $ul = $('#list ul');
+	console.log($list.length);
+	$right.on('click', function() {
+		if($num < $list.length) {
+			$num += 5;
+			if($num == $list.length) {
+				$ul.css('left', '-$list.outerWidth() *5');
+				$num = 5;
+			}
+			console.log($num);
+		}
+		$ul.animate({
+			left: -$list.innerWidth() * $num
+		}, 100);
+	});
+	$left.on('click', function() {
+		if($num >= 5) {
+			$num -= 5;
+			if($num == 0) {
+				$ul.css('left', '-$ul.outerWidth()');
+				$num = $list.length-5;
+			}
+		}
+		$ul.animate({
+			left: -$list.innerWidth() * $num 
+		}, 100)
+	});
+	
+}
+Sc();
