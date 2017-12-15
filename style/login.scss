@@ -150,7 +150,7 @@ li {
         position: relative;
         display: none;
         .msg-error {
-           visibility: hidden;
+            visibility: hidden;
             position: relative;
             top: -10px;
             background: #ffebeb;
@@ -252,7 +252,7 @@ li {
                 text-align: center;
                 color: #fff;
                 font-size: 20px;
-                padding:3px;
+                padding: 3px;
             }
         }
     }
@@ -262,7 +262,8 @@ li {
         margin: 30px auto;
         position: relative;
         .zhezhao {
-            display: block;
+            //          display: block;
+            visibility: hidden;
             position: absolute;
             width: 170px;
             background: #000;
@@ -270,11 +271,10 @@ li {
             opacity: .6;
             height: 163px;
             left: 66px;
-            z-index: 9;
+            z-index: 60;
             top: 0;
             text-align: center;
             line-height: 100px;
-            visibility: hidden;
         }
         .qrcode1 {
             border: 1px solid #f4f4f4;
@@ -290,7 +290,7 @@ li {
                 background: #000;
             }
             a {
-                display: block;
+                //              display: block;
                 background: #e4393c;
                 width: 80px;
                 height: 30px;
@@ -299,7 +299,7 @@ li {
                 left: 42px;
                 line-height: 30px;
                 visibility: hidden;
-                z-index: 40;
+                z-index: 70;
                 color: #fbfbfb;
             }
         }

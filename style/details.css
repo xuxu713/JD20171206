@@ -17,9 +17,16 @@
   padding: 0;
   color: #666; }
 
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0; }
+
 a {
   color: #666;
-  text-decoration: none; }
+  text-decoration: none;
+  font-size: 12px; }
 
 .wrap {
   margin: 0 auto;
@@ -525,12 +532,34 @@ a {
     display: inline;
     text-align: right;
     font-family: simsun; }
-  .product #summary #summary4 a {
-    color: #e4393c;
-    margin: 0 6px; }
+  .product #summary #summary4 {
+    margin: 80px; }
+    .product #summary #summary4 a {
+      color: #e4393c;
+      margin: 0 6px; }
+  .product #summary #summary5-cart {
+    margin-left: 100px;
+    margin-top: -30px; }
+    .product #summary #summary5-cart a {
+      display: block;
+      width: 137px;
+      height: 38px;
+      color: #e4393c;
+      overflow: hidden;
+      position: relative; }
+      .product #summary #summary5-cart a b {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        background: url(//static.360buyimg.com/item/main/1.0.38/css/i/p-btns.png) no-repeat; }
   .product #summary #summary2,
   .product #summary #summary3,
-  .product #summary #summary4 {
+  .product #summary #summary4,
+  .product #summary #summary5-cart {
     padding-top: 10px; }
 
 .box2 {

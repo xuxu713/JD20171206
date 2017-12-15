@@ -8,7 +8,11 @@ function hoverColor(obj, ele, colorafter = '#c81623', colorbefore = '#999', weig
 		$(this).css('font-weight', 'normal')
 	})
 }
-hoverColor('.navitems', 'a', '#b61d1d', '#666'); //details.html
+hoverColor('*', 'a', '#b61d1d', '#666'); //details.html
+hoverColor('.dropdown', 'a', 'blue', 'white'); //details.html
+hoverColor('#summary4', 'a', 'blue', '#e4393c'); //details.html
+magnifier();
+
 function magnifier() {
 	var $spic = $('#spic');
 	var $sf = $('#sf');
@@ -49,6 +53,7 @@ function magnifier() {
 				left: -$scale * $l,
 				top: -$scale * $t
 			})
+			return false;
 		});
 	}, function() {
 		$sf.hide();
@@ -98,4 +103,3 @@ function magnifier() {
 		$('#bpic').attr('src', $src);
 	});
 }
-magnifier();

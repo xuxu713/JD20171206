@@ -1,9 +1,9 @@
-/*function phpMysql1(obj, ele) {
-	$.post('php/test.php', {//url: '../JD20171206/php/reg.php',
+function phpMysql1(obj, ele) {
+	$.post('php/test.php', {
+		//	$.post('JD20171206/php/reg.php', {
 		obj: obj,
 		ele: ele
 	}, function(data) {
-		console.log(data);
 		var arr = JSON.parse(data);
 		var html = '';
 		for(var i = 0; i < arr.length; i++) {
@@ -16,27 +16,47 @@
 		hoverColor('.subdrop', 'a');
 	})
 }
-phpMysql('.submyjd .list-top', 'a');
-phpMysql('.submyjd .list-bottom', 'a');
-phpMysql('.subdrop .subdropol', 'a');*/
-/*function phpMysql2(){
+phpMysql1('.submyjd .list-top', 'a');
+phpMysql1('.submyjd .list-bottom', 'a');
+phpMysql1('.subdrop .subdropol', 'a');
+
+function phpMysql2(obj, ele) {
 	$.post('php/test.php', {
-//		obj: obj,
-//		ele: ele
+		//	$.post('JD20171206/php/reg.php', {
+		obj: obj,
+		ele: ele
 	}, function($str) {
-		console.log($str);
 		var arr = JSON.parse($str);
 		var html = '';
 		for(var i = 0; i < arr.length; i++) {
-//			html += '<li><a href="#">' + arr[i].title + '</a></li>';
-			html += '<li class="sk-item"><div><a href="//miaosha.jd.com/#1014500014" target="_blank" class="sk_item_pic_lk"><img src='+str[i].img+'" alt="谷源道 海鲜礼盒大礼包3298型海鲜礼券礼品卡" title="谷源道 海鲜礼盒大礼包3298型海鲜礼券礼品卡" class="sk_item_img"><p class="sk_item_name">' + str[i].title + '</p></a><span class="sk_item_shadow"></span></div><p class="sk_item_price"><span class="sk_item_price_new">￥298</span><span class="sk_item_price_origin"><del>1098</del></span></p></li>';
+			html += '<li class="sk-item"><div><a href="#" class="sk_item_pic_lk"><img src="' + arr[i] + '" alt="谷源道 海鲜礼盒大礼包3298型海鲜礼券礼品卡" class="sk_item_img"><p class="sk_item_name">谷源道 海鲜礼盒大礼包3298型海鲜礼券礼品卡1</p></a><span class="sk_item_shadow"></span></div><p class="sk_item_price"><span class="sk_item_price_new">￥298</span><span class="sk_item_price_origin"><del>1098</del></span></p></li>';
 		}
-		$('.sk-item-ul').html(html);
+		$(obj).html(html);
+		Sc();
 	})
 }
-phpMysql2();*/
-//phpMysql2('.sk-item-ul');
+phpMysql2('.sk-item-ul', 'img');
 
+function phpMysql3(obj, ele) {
+	$.post('php/test.php', {
+		//	$.post('JD20171206/php/reg.php', {
+		obj: obj,
+		ele: ele
+	}, function($str) {
+		var arr = JSON.parse($str);
+		var html = '';
+		for(var i = 0; i < arr.length; i++) {
+			html += '<li class="borderbr"><span>热水器节</span><img src="' + arr[i] + '"></li>';
+		}
+		$(obj).html(html);
+	})
+}
+phpMysql3('.jiadian .mainleft .loutiline1 ul', 'img');//楼梯模块的部分内容请求
+phpMysql3('.jiadian .mainright .loutiline1 ul', 'img');//楼梯模块的部分内容请求
+phpMysql3('.fuzhuang .mainleft .loutiline1 ul', 'img');//楼梯模块的部分内容请求
+phpMysql3('.fuzhuang .mainright .loutiline1 ul', 'img');//楼梯模块的部分内容请求
+phpMysql3('.wansanc .mainleft .loutiline1 ul', 'img');//楼梯模块的部分内容请求
+phpMysql3('.wansanc .mainright .loutiline1 ul', 'img');//楼梯模块的部分内容请求
 function banner(box) { //轮播图效果
 	var $box = $(box);
 	var $imgs = $(box).find('ul li');
@@ -233,8 +253,6 @@ function step() {
 	}, function() {
 		$(this).removeClass('active');
 		var $offsettop = $('.louti').eq($(this).index('li')).offset().top;
-		console.log($offsettop);
-		console.log($(window).scrollTop());
 		if($offsettop == $(window).scrollTop()) {
 			$('#loutinav li').eq($(this).index('li')).addClass('active');
 		}
@@ -291,38 +309,31 @@ function shangcheng() { //商城效果，左右移动来更换图片
 	timer = setInterval(rightClick, 2000);
 }
 
-function Sc() {//秒杀的商城效果
+function Sc() { //秒杀的商城效果
 	var $left = $('#left');
 	var $right = $('#right');
-	var $num = 5;
-	var $list = $('#list li');
+	var $num = 0;
 	var $ul = $('#list ul');
-	console.log($list.length);
-	$right.on('click', function() {
-		if($num < $list.length) {
-			$num += 5;
-			if($num == $list.length) {
-				$ul.css('left', '-$list.outerWidth() *5');
-				$num = 5;
-			}
-			console.log($num);
+	$ul.html($ul.html());
+	var $list = $ul.children('li');
+	$left.on('click', function() {
+		if($num < $list.length / 2) {
+			$num++;
+		} else {
+			num = 0;
 		}
 		$ul.animate({
-			left: -$list.innerWidth() * $num
+			left: -$list.outerWidth() * $num
 		}, 100);
 	});
-	$left.on('click', function() {
-		if($num >= 5) {
-			$num -= 5;
-			if($num == 0) {
-				$ul.css('left', '-$ul.outerWidth()');
-				$num = $list.length-5;
-			}
+	$right.on('click', function() {
+		if($num > 0) {
+			$num--;
+		} else {
+			$num = $list.length / 2;
 		}
 		$ul.animate({
-			left: -$list.innerWidth() * $num 
-		}, 100)
+			left: $list.outerWidth() * $num
+		}, 100);
 	});
-	
 }
-Sc();

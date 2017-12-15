@@ -8,7 +8,33 @@ function showUser() { //显示和隐藏注册用户名的相关提示信息
 		$(this).css('text-decoration', 'none');
 	});
 }
+/*随机验证码*/
+function randomCode() {
+	var code = '';
+	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+	for(var i = 0; i < 4; i++) {
+		code += arr[Math.floor(Math.random() * arr.length)]
+	}
+	return code;
+}
 
+function imgCode() { //生成验证码，点击更改验证码
+	var $imgcode = $('.img-code');
+	$imgcode.html(randomCode());
+	$imgcode.on('click', function() {
+		$imgcode.html(randomCode());
+	});
+}
+imgCode();
+
+function phoneCode() { //生成验证码，点击更改验证码，赋给前面的接收框
+	var $phone = $('.phone-code');
+	var $phonecode = $('#phonecode');
+	$phone.on('click', function() {
+		$phonecode.val(randomCode());
+	});
+}
+phoneCode();
 function judeInput(obj) { //判断输入框是否输入，输入全部合法性可跳转。
 	var bstop = false;
 	var $obj = $(obj);
@@ -115,12 +141,47 @@ function judeInput(obj) { //判断输入框是否输入，输入全部合法性�
 				bstop = true;
 			}
 		}
+		if($(this).attr('id') == $('#form-pwdrepeat').attr('id')) {
+			if($(this).val() == '') {
+				$(this).attr('placeholder', '请再次输入密码')
+				$inputtip.hide();
+				bstop = false;
+			} else if($(this).val() != ($(this).parents('.line').siblings('.line').find('#form-pwd').val())) {
+				$inputtip.show();
+				$tipspan.html('两次密码输入不一致');
+				$tipspan.css('color', '#e22');
+				bstop = false;
+			} else {
+				$inputtip.hide();
+				bstop = true;
+			}
+		}
+		if($(this).attr('id') == $('#imgcode').attr('id')) {
+			var str1 = $(this).val();
+			var str2 = $(this).siblings('.img-code').html();
+			if(str1.toUpperCase() == str2.toUpperCase()) {
+				$inputtip.hide();
+				$tipspan.html('请输入验证码');
+				$tipspan.css('color', '#ccc');
+				bstop = true;
+			} else {
+				$inputtip.show();
+				$tipspan.html('验证码输入错误');
+				$tipspan.css('color', '#e22');
+				bstop = false;
+			}
+		}
+		if($(this).attr('id') == $('#phonecode').attr('id')) {
+				bstop = true;
+		}
 		if(bstop) {
 			$iStatus.css('display', 'block');
 		} else {
 			$iStatus.css('display', 'none');
 		}
+	console.log(bstop);
 	});
+
 	$obj.on('input', function() {
 		var $inputtip = $(this).parent().siblings('.input-tip');
 		var $tipspan = $inputtip.children('span');
@@ -185,13 +246,12 @@ function judeInput(obj) { //判断输入框是否输入，输入全部合法性�
 			$.ajax({
 				type: 'post',
 				url: '../JD20171206/php/register.php',
-//				url: '../php/register.php',
+				//				url: '../php/register.php',//如果php不成功，可以改为这个路径
 				data: {
 					name: username,
-					pass:$('#password').val()
+					pass: $('#password').val()
 				},
 				success: function(data) {
-					alert(data);
 					if(!data) {
 						$('#form-account').siblings('.i-status').show();
 						bstop1 = true;
@@ -201,15 +261,18 @@ function judeInput(obj) { //判断输入框是否输入，输入全部合法性�
 						$('#form-account').siblings('.i-status').hide();
 						bstop1 = false;
 					}
-					
+					$('form').on('submit', function() {
+						if(bstop1) {
+							return false; //阻止按钮跳转。
+						}
+					});
 				}
 			})
 		}
 	});
-	
+
 	$('form').on('submit', function() {
-		if(bstop&&bstop1) {
-			alert('ok');
+		if(bstop) {
 			$(window).attr('location', 'https://www.jd.com/');
 		} else {
 			alert('输入的信息不符合要求，请核对，谢谢！');
@@ -217,33 +280,7 @@ function judeInput(obj) { //判断输入框是否输入，输入全部合法性�
 	});
 }
 judeInput('.field');
-/*随机验证码*/
-function randomCode() {
-	var code = '';
-	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-	for(var i = 0; i < 4; i++) {
-		code += arr[Math.floor(Math.random() * arr.length)]
-	}
-	return code;
-}
 
-function imgCode() { //生成验证码，点击更改验证码
-	var $imgcode = $('.img-code');
-	$imgcode.html(randomCode());
-	$imgcode.on('click', function() {
-		$imgcode.html(randomCode());
-	});
-}
-imgCode();
-
-function phoneCode() { //生成验证码，点击更改验证码，赋给前面的接收框
-	var $phone = $('.phone-code');
-	var $phonecode = $('#phonecode');
-	$phone.on('click', function() {
-		$phonecode.val(randomCode());
-	});
-}
-phoneCode();
 
 function aboutDialog() { //点击取消和右上角关闭按钮，遮罩和条款框消失，跳转到京东主页。点击同意，遮罩和条款框消失。
 	var $yes = $('.protocol-button button');
@@ -261,37 +298,3 @@ function aboutDialog() { //点击取消和右上角关闭按钮，遮罩和条�
 	});
 }
 aboutDialog();
-//表单验证-用户名
-/*(function() {
-	var bstop = false; //不通过
-	$('#form-account').on('blur', function() {
-		var username = $(this).val();
-		if(username != '') {
-			$.ajax({
-				type: 'post',
-				url: '../JD20171206/php/reg.php',
-				data: {
-					name: username
-				},
-				success: function(data) {
-					if(!data) {
-						console.log('no');
-						$('#form-account').siblings('.i-status').show();
-						bstop = true;
-					} else {
-						console.log('yes');
-						$('#form-account').parent().siblings('.input-tip').children('span').html('该用户名已被使用，请更换其它用户名');
-						$('#form-account').parent().siblings('.input-tip').show();
-						$('#form-account').siblings('.i-status').hide();
-						bstop = false;
-					}
-				}
-			})
-		}
-	});
-	$('form').on('submit', function() {
-		if(bstop) {
-			return false; //阻止按钮跳转。
-		}
-	});
-})();*/

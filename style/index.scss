@@ -798,6 +798,95 @@ a {
 }
 
 #seckill {
+    .lingquan {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        .ling1 {
+            width: 60%;
+        }
+        .ling2 {
+            width: 35%;
+        }
+        p {
+            background: #4998a1;
+            height: 55px;
+            line-height: 55px;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            text-indent: 30px;
+            border-radius: 10px;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+        }
+        li {
+            border-right: 1px solid #CCCCCC;
+            display: flex;
+            width: 24%;
+            height: 215px;
+            position: relative;
+        }
+        img {
+            width: 140px;
+            height: 140px;
+            margin: 20px auto;
+        }
+    }
+    .findgoods {
+        height: 444px;
+        display: flex;
+        justify-content: space-around;
+        p {
+            background: #4998a1;
+            height: 55px;
+            line-height: 55px;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            text-indent: 30px;
+            border-radius: 10px;
+        }
+        div {
+            width: 30%;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+        }
+        li {
+            border-bottom: 1px solid #CCCCCC;
+            display: flex;
+            width: 50%;
+            height: 120px;
+            position: relative;
+        }
+        span {
+            font-size: 12px;
+            color: #4998a1;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 80px;
+            line-height: 20px;
+            /*padding:5px;*/
+        }
+        img {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            width: 80px;
+            height: 80px;
+        }
+        span,
+        img {
+            width: 50%;
+        }
+    }
     .box_hd {
         position: relative;
         padding: 0 20px 0 30px;
@@ -904,13 +993,16 @@ a {
     .sk-list {
         width: 1000px;
         position: relative;
-        //      overflow: hidden;
         #list {
             position: relative;
-            width: 6000px;
+            width: 1000px;
+            overflow: hidden;
+            height: 250px;
         }
         ul {
             position: absolute;
+            height: 250px;
+            width: 6000px;
         }
         .sk_controls_item {
             position: absolute;
@@ -942,7 +1034,7 @@ a {
             height: 225px;
             border-right: 1px solid #e7e7e7;
             position: relative;
-            padding: 0 14px 0 15px;
+            //          padding: 0 14px 0 15px;
             div {
                 position: relative;
                 text-align: center;
@@ -1002,7 +1094,7 @@ a {
         }
     }
     .sk-special {
-        display: none;
+        //      display: none;
         position: relative;
         margin: 0 10px 0 0;
         ol {
@@ -1107,9 +1199,136 @@ a {
     height: 100%;
 }
 
+.mid1 {
+    li {
+        float: left;
+    }
+    padding: 30px 0;
+    background: #f6f6f6;
+}
+
 #mainlt {
-    background: #66ff66;
+    background: #f6f6f6;
     margin: 0 auto;
+    .loutimain {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .mainleft,
+    .mainright {
+        width: 49%;
+        background: white;
+        .p-span {
+            background: #974676;
+            height: 55px;
+            line-height: 55px;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            text-indent: 30px;
+            border-radius: 10px;
+            position: relative;
+            p {
+                height: 100%;
+            }
+        }
+        /*.loutiline1*/
+        .loutiline1 {
+            display: flex;
+            justify-content: space-around;
+        }
+        .datu {
+            width: 33%;
+            height: 260px;
+        }
+        .xiaotu {
+            width: 66%;
+        }
+        .xiaotu ul {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .xiaotu li {
+            width: 48%;
+            height: 130px;
+            display: flex;
+            position: relative;
+        }
+        .xiaotu span {
+            font-size: 12px;
+            color: #4998a1;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 50%;
+            line-height: 20px;
+            /*padding:5px;*/
+        }
+        .xiaotu li img {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            width: 50%;
+        }
+        .borderbr {
+            border-bottom: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+        }
+        .bordertl {
+            border-top: 1px solid #CCCCCC;
+            border-left: 1px solid #CCCCCC;
+        }
+        /*.loutiline2*/
+        .loutiline2 {
+            display: flex;
+            justify-content: space-around;
+        }
+        a {
+            display: inline-block;
+            height: 130px;
+            width: 33%;
+        }
+        .loutiline2 img {
+            width: 100%;
+            height: 100%;
+        }
+        /*loutiline3*/
+        .loutiline3 ul {
+            display: flex;
+            justify-content: space-around;
+        }
+        .loutiline3 li {
+            width: 15%;
+        }
+    }
+    .fuzhuang {
+        .ltmp1 {
+            background: #974676;
+        }
+        .ltmp2 {
+            background: #cd375e;
+        }
+    }
+    .jiadian {
+        .ltmp1 {
+            background: #78538e;
+        }
+        .ltmp2 {
+            background: #5e6c90;
+        }
+    }
+    .wansanc {
+        .ltmp1 {
+            background: #3aaba9;
+        }
+        .ltmp2 {
+            background: #568e7d;
+        }
+    }
 }
 
 #mainlt {
@@ -1117,36 +1336,37 @@ a {
         overflow: hidden;
         padding: 0 0 20px;
         height: 35px;
+        background: url(../img/loutibg.png) repeat-x 0 18px;
         text-align: center;
         font-size: 24px;
         line-height: 35px;
-        h3 {
-            display: inline;
-            padding: 0 50px;
-            background-color: #f6f6f6;
-            font-weight: 400;
-            font-size: 26px;
-            color: #333;
-            font-family: fzzhengheis-el-gbregular;
-        }
     }
-    .louti {
-        height: 600px;
-        font-size: 50px;
-        color: #fff;
-        font-weight: bold;
-        text-align: center;
-        line-height: 600px;
-        border: 2px solid red;
-        background: #C5C5C5;
-        .wrap {
-            background: #005AA0;
-            height: 100%;
-        }
+    h3 {
+        display: inline;
+        padding: 0 50px;
+        background-color: #f6f6f6;
+        font-weight: 400;
+        font-size: 26px;
+        color: #333;
+        font-family: fzzhengheis-el-gbregular;
     }
-    #xpz {}
 }
 
+.louti {
+    margin: 30px 0;
+}
+
+//.louti {
+//  height: 600px;
+//  font-size: 50px;
+//  color: #fff;
+//  font-weight: bold;
+//  text-align: center;
+//  line-height: 600px;
+//  .wrap {
+//      height: 100%;
+//  }
+//}
 #footer {
     height: 500px;
     background-color: #eaeaea;

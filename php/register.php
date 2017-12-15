@@ -1,14 +1,19 @@
 <?php
 require "conn.php";
-$username = $_REQUEST["name"] or die("用户名是必须的");
-$password = $_REQUEST["pass"] or die("密码是必须的");
-$query = "insert into user values(NULL,'$username','$password')";
+@$username = $_REQUEST["name"];
+@$password = $_REQUEST["pass"];
+$query = "select * from user where username='$username'";
 $result = mysql_query($query);
-if(mysql_fetch_assoc($result)) {
-//	echo true;//有重复，跳转登录页面
-//	header('location:../login.html');
+if (mysql_fetch_array($result)) {
 	echo true;
 } else {
 	echo false;
+}
+if (isset($_POST['submit']) && $_POST['submit'] == "立即注册") {
+	$user = $_POST['username'];
+	$pass = md5($_POST['password']);
+	echo $user;
+	$query = "insert user(sid,username,password) values(default,'$user','$pass')";
+	mysql_query($query);
 }
 ?>

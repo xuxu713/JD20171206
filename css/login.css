@@ -255,7 +255,7 @@ li {
   position: relative;
 }
 #main .qrcode-login .zhezhao {
-  display: block;
+  visibility: hidden;
   position: absolute;
   width: 170px;
   background: #000;
@@ -263,11 +263,10 @@ li {
   opacity: .6;
   height: 163px;
   left: 66px;
-  z-index: 9;
+  z-index: 60;
   top: 0;
   text-align: center;
   line-height: 100px;
-  visibility: hidden;
 }
 #main .qrcode-login .qrcode1 {
   border: 1px solid #f4f4f4;
@@ -284,7 +283,6 @@ li {
   background: #000;
 }
 #main .qrcode-login .qrcode1 a {
-  display: block;
   background: #e4393c;
   width: 80px;
   height: 30px;
@@ -293,7 +291,7 @@ li {
   left: 42px;
   line-height: 30px;
   visibility: hidden;
-  z-index: 40;
+  z-index: 70;
   color: #fbfbfb;
 }
 #main .qrcode-login .qrcode-help {

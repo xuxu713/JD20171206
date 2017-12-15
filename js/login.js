@@ -41,7 +41,7 @@ function tabswitch() { //点击元素，显示指定的元素
 	})
 }
 hoverColorStay(); //划过login.htm>-main>login-tab，a字体变色，滑出时判断是否需要更改a字体颜色
-function hoverColorStay() { //划过盒子，指定子元素变色，滑出时判断当前显示的盒子，来决定指定元素的样式
+function hoverColorStay() { //划过盒子（扫码登录和账户登录），指定子元素变色，滑出时判断当前显示的盒子，来决定指定元素的样式
 	var $ele = $('.login-tab').find('a');
 	$ele.hover(function() {
 		$(this).css('color', '#e4393c');
@@ -72,15 +72,45 @@ function hoverColorStay() { //划过盒子，指定子元素变色，滑出时�
 	})
 }
 
+function refresh() { //每次刷新，延时遮罩出现，点击刷新按钮遮罩消失，刷新按钮消失。
+	var $refrshButton = $('.qrcode-text a');
+	var timer = setTimeout(function() {
+		$('.zhezhao').css('visibility','visible');
+		$refrshButton.css('visibility','visible');
+	}, 3000);
+	$refrshButton.on('click', function() {
+		clearTimeout(timer);
+		$('.zhezhao').css('visibility','hidden');
+		$refrshButton.css('visibility','hidden');
+		timer = setTimeout(function() {
+			$('.zhezhao').css('visibility','visible');
+			$refrshButton.css('visibility','visible');
+		}, 3000);
+	});
+	$('.qrcode1').hover(function() {
+		clearTimeout(timer);
+	}, function() {
+		timer = setTimeout(function() {
+			$('.zhezhao').css('visibility','visible');
+			$refrshButton.css('visibility','visible');
+		}, 3000);
+	})
+}
+refresh();
+
 function showQrcodeHelpImg() { //手机扫码登录，滑出帮助图片
 	var $qrcodeHelp = $('.qrcode-help');
 	var $qrcode = $('.qrcode1');
 	var $qrcodeText = $('.qrcode-text');
 	$qrcode.hover(function() {
-		$qrcode.stop().animate({
+		if($('.zhezhao').css('visibility')=='hidden'){
+			$qrcode.stop().animate({
 				'left': -65
 			}, 300),
 			$qrcodeHelp.delay(100).stop().fadeIn(300);
+		}else{
+			$qrcode.css('left',0);
+		}
 		return false;
 	}, function() {
 		$qrcode.delay(100).stop().animate({
@@ -92,48 +122,30 @@ function showQrcodeHelpImg() { //手机扫码登录，滑出帮助图片
 }
 showQrcodeHelpImg();
 
-function refresh() { //每次刷新，延时1s后遮罩出现，点击刷新按钮遮罩消失，刷新按钮消失。
-	var $refrshButton = $('.qrcode-text a');
-	var timer = setTimeout(function() {
-		$('.zhezhao').css('visibility', 'visible');
-		$refrshButton.css('visibility', 'visible');
-	}, 1000);
-	$refrshButton.on('click', function() {
-		clearTimeout(timer);
-		$('.zhezhao').hide();
-		$refrshButton.hide();
-		timer = setTimeout(function() {
-			$('.zhezhao').show();
-			$refrshButton.show();
-		}, 1000);
-	});
-}
-refresh();
-
 function addCookie(key, value, day) {
-	var date = new Date(); 
-	date.setDate(date.getDate() + day); 
-	document.cookie = key + '=' + encodeURI(value) + ';expires=' + date; 
+	var date = new Date();
+	date.setDate(date.getDate() + day);
+	document.cookie = key + '=' + encodeURI(value) + ';expires=' + date;
 }
 $('#loginsubmit').on('click', function() {
 	var $username = $('#username').val();
 	var $password = $('#password').val();
 	$.ajax({
 		type: 'post',
-//		url: '../php/login.php',
+		//		url: '../php/login.php',
 		url: '../JD20171206/php/login.php',
-		data: { 
+		data: {
 			name: $username,
 			pass: $password
 		},
-		success: function(data) { 
-			if(!data) { 
-				$('#error').css('visibility','visible');
+		success: function(data) {
+			if(!data) {
+				$('#error').css('visibility', 'visible');
 				$('#password').val('');
 			} else {
 				addCookie('uesrname', $username, 7);
 				location.href = 'https://www.jd.com/';
-				$('#error').css('visibility','hidden');
+				$('#error').css('visibility', 'hidden');
 			}
 		}
 	})

@@ -669,6 +669,80 @@ a {
       border-width: 2px 6px;
       border-color: #e01121 #e01121 #fff; }
 
+#seckill .lingquan {
+  width: 100%;
+  display: flex;
+  justify-content: space-around; }
+  #seckill .lingquan .ling1 {
+    width: 60%; }
+  #seckill .lingquan .ling2 {
+    width: 35%; }
+  #seckill .lingquan p {
+    background: #4998a1;
+    height: 55px;
+    line-height: 55px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-indent: 30px;
+    border-radius: 10px; }
+  #seckill .lingquan ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px; }
+  #seckill .lingquan li {
+    border-right: 1px solid #CCCCCC;
+    display: flex;
+    width: 24%;
+    height: 215px;
+    position: relative; }
+  #seckill .lingquan img {
+    width: 140px;
+    height: 140px;
+    margin: 20px auto; }
+#seckill .findgoods {
+  height: 444px;
+  display: flex;
+  justify-content: space-around; }
+  #seckill .findgoods p {
+    background: #4998a1;
+    height: 55px;
+    line-height: 55px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-indent: 30px;
+    border-radius: 10px; }
+  #seckill .findgoods div {
+    width: 30%; }
+  #seckill .findgoods ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px; }
+  #seckill .findgoods li {
+    border-bottom: 1px solid #CCCCCC;
+    display: flex;
+    width: 50%;
+    height: 120px;
+    position: relative; }
+  #seckill .findgoods span {
+    font-size: 12px;
+    color: #4998a1;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 80px;
+    line-height: 20px;
+    /*padding:5px;*/ }
+  #seckill .findgoods img {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 80px;
+    height: 80px; }
+  #seckill .findgoods span,
+  #seckill .findgoods img {
+    width: 50%; }
 #seckill .box_hd {
   position: relative;
   padding: 0 20px 0 30px;
@@ -763,9 +837,13 @@ a {
   position: relative; }
   #seckill .sk-list #list {
     position: relative;
-    width: 6000px; }
+    width: 1000px;
+    overflow: hidden;
+    height: 250px; }
   #seckill .sk-list ul {
-    position: absolute; }
+    position: absolute;
+    height: 250px;
+    width: 6000px; }
   #seckill .sk-list .sk_controls_item {
     position: absolute;
     display: block;
@@ -791,8 +869,7 @@ a {
     width: 170px;
     height: 225px;
     border-right: 1px solid #e7e7e7;
-    position: relative;
-    padding: 0 14px 0 15px; }
+    position: relative; }
     #seckill .sk-list .sk-item div {
       position: relative;
       text-align: center; }
@@ -841,7 +918,6 @@ a {
       width: 170px;
       height: 20px; }
 #seckill .sk-special {
-  display: none;
   position: relative;
   margin: 0 10px 0 0; }
   #seckill .sk-special ol {
@@ -912,37 +988,140 @@ a {
   width: 100%;
   height: 100%; }
 
+.mid1 {
+  padding: 30px 0;
+  background: #f6f6f6; }
+  .mid1 li {
+    float: left; }
+
 #mainlt {
-  background: #66ff66;
+  background: #f6f6f6;
   margin: 0 auto; }
+  #mainlt .loutimain {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; }
+  #mainlt .mainleft,
+  #mainlt .mainright {
+    width: 49%;
+    background: white;
+    /*.loutiline1*/
+    /*.loutiline2*/
+    /*loutiline3*/ }
+    #mainlt .mainleft .p-span,
+    #mainlt .mainright .p-span {
+      background: #974676;
+      height: 55px;
+      line-height: 55px;
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      text-indent: 30px;
+      border-radius: 10px;
+      position: relative; }
+      #mainlt .mainleft .p-span p,
+      #mainlt .mainright .p-span p {
+        height: 100%; }
+    #mainlt .mainleft .loutiline1,
+    #mainlt .mainright .loutiline1 {
+      display: flex;
+      justify-content: space-around; }
+    #mainlt .mainleft .datu,
+    #mainlt .mainright .datu {
+      width: 33%;
+      height: 260px; }
+    #mainlt .mainleft .xiaotu,
+    #mainlt .mainright .xiaotu {
+      width: 66%; }
+    #mainlt .mainleft .xiaotu ul,
+    #mainlt .mainright .xiaotu ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+    #mainlt .mainleft .xiaotu li,
+    #mainlt .mainright .xiaotu li {
+      width: 48%;
+      height: 130px;
+      display: flex;
+      position: relative; }
+    #mainlt .mainleft .xiaotu span,
+    #mainlt .mainright .xiaotu span {
+      font-size: 12px;
+      color: #4998a1;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      width: 50%;
+      line-height: 20px;
+      /*padding:5px;*/ }
+    #mainlt .mainleft .xiaotu li img,
+    #mainlt .mainright .xiaotu li img {
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      width: 50%; }
+    #mainlt .mainleft .borderbr,
+    #mainlt .mainright .borderbr {
+      border-bottom: 1px solid #CCCCCC;
+      border-right: 1px solid #CCCCCC; }
+    #mainlt .mainleft .bordertl,
+    #mainlt .mainright .bordertl {
+      border-top: 1px solid #CCCCCC;
+      border-left: 1px solid #CCCCCC; }
+    #mainlt .mainleft .loutiline2,
+    #mainlt .mainright .loutiline2 {
+      display: flex;
+      justify-content: space-around; }
+    #mainlt .mainleft a,
+    #mainlt .mainright a {
+      display: inline-block;
+      height: 130px;
+      width: 33%; }
+    #mainlt .mainleft .loutiline2 img,
+    #mainlt .mainright .loutiline2 img {
+      width: 100%;
+      height: 100%; }
+    #mainlt .mainleft .loutiline3 ul,
+    #mainlt .mainright .loutiline3 ul {
+      display: flex;
+      justify-content: space-around; }
+    #mainlt .mainleft .loutiline3 li,
+    #mainlt .mainright .loutiline3 li {
+      width: 15%; }
+  #mainlt .fuzhuang .ltmp1 {
+    background: #974676; }
+  #mainlt .fuzhuang .ltmp2 {
+    background: #cd375e; }
+  #mainlt .jiadian .ltmp1 {
+    background: #78538e; }
+  #mainlt .jiadian .ltmp2 {
+    background: #5e6c90; }
+  #mainlt .wansanc .ltmp1 {
+    background: #3aaba9; }
+  #mainlt .wansanc .ltmp2 {
+    background: #568e7d; }
 
 #mainlt .ftit_inner {
   overflow: hidden;
   padding: 0 0 20px;
   height: 35px;
+  background: url(../img/loutibg.png) repeat-x 0 18px;
   text-align: center;
   font-size: 24px;
   line-height: 35px; }
-  #mainlt .ftit_inner h3 {
-    display: inline;
-    padding: 0 50px;
-    background-color: #f6f6f6;
-    font-weight: 400;
-    font-size: 26px;
-    color: #333;
-    font-family: fzzhengheis-el-gbregular; }
-#mainlt .louti {
-  height: 600px;
-  font-size: 50px;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  line-height: 600px;
-  border: 2px solid red;
-  background: #C5C5C5; }
-  #mainlt .louti .wrap {
-    background: #005AA0;
-    height: 100%; }
+#mainlt h3 {
+  display: inline;
+  padding: 0 50px;
+  background-color: #f6f6f6;
+  font-weight: 400;
+  font-size: 26px;
+  color: #333;
+  font-family: fzzhengheis-el-gbregular; }
+
+.louti {
+  margin: 30px 0; }
 
 #footer {
   height: 500px;
